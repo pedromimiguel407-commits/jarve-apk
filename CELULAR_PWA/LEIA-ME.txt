@@ -1,0 +1,11 @@
+JARVES AI — CELULAR (PWA)
+O app web responsivo fica no CORE/frontend e e servido pelo backend.
+1. Inicie o servidor no PC com o script da pasta PC_WINDOWS ou PC_LINUX.
+2. Conecte PC e celular na mesma rede Wi-Fi.
+3. Descubra o IP local do PC (o script Linux mostra; no Windows use ipconfig).
+4. No navegador do celular, abra http://IP-DO-PC:3000.
+5. No Chrome/Edge, menu > Instalar aplicativo ou Adicionar a tela inicial.
+
+O celular atua como cliente do servidor no PC. O PC precisa permanecer ligado.
+Nao use 127.0.0.1 no celular: esse endereco aponta para o proprio celular.
+Para acesso fora da rede local, configure HTTPS e autenticacao; nao exponha a porta 3000 diretamente na internet.
