@@ -1,7 +1,7 @@
 {
   "name": "jarves-ai",
-  "version": "2.3.0",
-  "description": "JARVES AI multiplataforma com gerenciador de provedores, modelos e API keys",
+  "version": "2.3.1",
+  "description": "JARVES AI multiplataforma com HTML Mega Test Suite e diagnóstico aprimorado",
   "type": "module",
   "main": "desktop/main.cjs",
   "scripts": {
