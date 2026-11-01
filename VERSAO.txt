@@ -1,0 +1,2 @@
+JARVES AI MULTIPLATAFORMA 2.3.0
+Correcoes de seguranca, build (Electron/Node), chat, tarefas, upload e Android. Veja BUILD/RELATORIO_2.3.0.md e CORE/CHANGELOG.md.

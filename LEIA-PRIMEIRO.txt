@@ -1,0 +1,31 @@
+JARVES AI — ESTRUTURA MULTIPLATAFORMA
+
+PC_WINDOWS/       Inicializacao Windows e compilacao do instalador EXE.
+PC_LINUX/         Inicializacao Linux e compilacao AppImage/DEB.
+CELULAR_PWA/      Uso pelo navegador e instalacao como PWA.
+ANDROID_APK/      Projeto Android e script para gerar APK.
+CORE/             Aplicacao principal: frontend, backend, IA, banco e testes.
+BUILD/            Scripts auxiliares e relatorios de verificacao.
+DOCUMENTACAO/     Guias e relatorios.
+
+IMPORTANTE
+- Extraia a pasta completa; nao mova as subpastas individualmente.
+- PC e celular podem compartilhar o backend pela mesma rede Wi-Fi.
+- Ollama precisa ser instalado separadamente e ter um modelo baixado.
+- APIs externas exigem chave valida do provedor; mantenha-a apenas no .env do servidor.
+- Nenhum sistema pode ser garantido sem bugs em todos os computadores. Leia BUILD/RELATORIO_2.3.0.md.
+
+EXECUTOR HTML (NOVO)
+- Abra JARVES_EXECUTOR.html com duplo clique (Chrome, Edge ou Firefox). Nao precisa de Node nem de instalacao.
+- Os dados ficam no navegador (IndexedDB). Use os botoes Backup/Restaurar na barra lateral para guardar ou mover.
+- Para IA, instale o Ollama e baixe um modelo; se o navegador bloquear, inicie o Ollama com OLLAMA_ORIGINS=*.
+- Sem Ollama, escolha o provedor "mock" em Configuracoes para testar a interface, ou use uma API compativel com OpenAI.
+- Limites: pesquisa web e diagnostico de codigo do servidor nao existem neste modo. Regenerar: cd CORE && npm run build:executor
+
+NOVA AREA DE IA (2.2.x)
+- Configuracoes > Conexao: escolha Ollama ou provedor compativel com OpenAI.
+- Configuracoes > Modelos IA: liste, selecione e instale modelos Ollama.
+- Configuracoes > API keys: cadastre/remova sua chave de provedor externo.
+- O JARVES nao cria credenciais de terceiros; gere a chave no painel oficial do provedor.
+- As chaves cadastradas sao cifradas localmente; preserve CORE/data/.jarves-secret junto do banco.
+- Consulte CORE/docs/PROVIDER_MANAGER_2.1.md para instrucoes e limites de compilacao.
