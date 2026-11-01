@@ -1,0 +1,7 @@
+JARVES AI — ANDROID APK
+Este projeto Android e um cliente WebView. Ele conecta ao backend JARVES em um PC/servidor.
+Requisitos de compilacao: JDK 17, Android SDK e Gradle 8.x (ou Android Studio).
+Execute ./GERAR_APK.sh em Linux/macOS. No Windows, abra a pasta no Android Studio e use Build > Build APK(s).
+O APK final sera criado em OUTPUT/JARVES-AI-debug.apk.
+Configure no app o endereco http://IP-DO-PC:3000; PC e celular devem estar na mesma Wi-Fi.
+O repositorio nao inclui APK precompilado nem Gradle Wrapper. A compilacao precisa das ferramentas Android instaladas.

@@ -1,0 +1,2276 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080d1a">
+<meta name="description" content="Interface responsiva PC e celular do JARVES AI.">
+<title>JARVES AI</title>
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAJRklEQVR4nO3d2W9VVRQG8O+2JVQpcCFSMTIYEUeEqKRR0TBURLG1lwuJCYn64F/gmyZOUaN/gw9qwosxPigUFAdiqSaOMcQhwSkK6oPVaEUjJgj1oR5ze+2Z7tnD2nt9vze4p/fss9f6zt73UFqAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiISLya7wHErK9+6ZSJ9/lj8ijrZAkn1gBTjV4Wg1EdJ7ADvho+DwNRHiesAKkNn4eByMcJShFq06dhGGbHSWkTW+O3YxBm4mQg/qZPwzAoD4DWxm+nOQgqL5yNPzuNQVB1wWz8YjQFQcWFsvE7oyEIXb4HYBubv3Ma5i7ahGsonkuxrgZRrgBsfvNindOoUh1rkaSJaTWIZgVg87sT01xHEYCYChKKWOY86KUsliKELuQtUbArAJtfjpBrEWQAQp7wWIVak+ACEOpEaxBibYIKQIgTrE1oNQomAKFNrGYh1SqIAIQ0oTQtlJqJD0AoE0n/F0LtRAcghAmkbNJrKDYA0ieOipNcS5EBkDxh1BmpNRUXAKkTRdVJrK24ABC5JCoAEu8QZJa0GosJgLSJIXsk1VpEACRNCLkhpeYiAkDki/cASLkTkHsSau81ABImgPzy3QPeVwAin7wFwHfySQ6fveAlAGx+auerJ7gFItWcB4B3f0rjoze4ApBqTgPAuz/lcd0jXAFINWcB4N2finLZK1wBSDUnAeDdn8py1TNcAUi1Ht8D0GTw8NOFjju08R7LI6GE9Z/rrnn7U7Th82gOhO3fPcAAGGaq6dNoC0PQAdDU/LYbv52mINgMAT8EG+C6+X2dM0ZcASqQ0oSxrwZBrgBsfnckjcUGm73ELVAHJDacxDGFgAEoSXKjSR6bVAxACSE0WAhjlMRKAGLc/4fUWCGNtShbPcUVoIAQGyrEMfvAAOQIuZFCHrsrDACpZjwAMe3/Y7iDxnANCRu9xRUgRUyNE9O1mMYAkGoMwCxivGPGeE0mMACkGgNAqhkNQAxPgGLeKsRwbaZ7jCsAqcYAkGoMAKnGALSIYY+cR8M1lsEAkGoMAKnGAJBqDACpxgCQagwAqcYAkGoMAKnGAJBqDECL2H/ILKDjGstgAEg1BoBUYwBINaMBsP37nFyIeY8cw7WZ7jGuAKQaA0CqMQCziGGr0C7GazKBASDVGIAUMd0xY7oW04wHIIYnQYkYGieGa0jY6C2uAKQaA5Aj5DtoyGN3hQEoIMRGCnHMPlgJQEyfAxIhNVRIYy3KVk9xBSghhMYKYYySMAAlSW4wyWOTigHogMRGkzimEFgLQIyfA1pJajhJY7HBZi9ZbdIYfmFGEb5+4GzsjZ+wGQBugQzw0Yhamt8269sULatAwvZqoK3xbW+lGQCLTIVBW9O3Cj4AgO4QtCoaCM0N38rFgxQGgMRyEQB+CCbVnAQg9n8TIPNc9QxXAFLNWQC4ClBRLnuFKwCp5jQAXAUoj+se4QpAqjkPAFcBSuOjN7gCkGpeAsBVgNr56glvKwBDQAmfvcAtEKnmNQBcBch3D3hfAXxPAPkjofbeA0Dkk4gASLgTkFtSai4iAICcCSH7JNVaTAAAWRNDdkircY/vAcSot7cX73/4Fvr6+godv2njNhw/drzSOR9/4hHs3n1H9jGPPolnntlT6TyxEbUCAPLuEJ24edtNhZsfAJrNEYujkUNibcUFAJA5UWXs3NUodXxz5whqtaAvOZfUmooMACB3wvIsXXouNmy4rtTXLFt2PgYG1lsakX+Sayk2AIDsiUvT2DGMrq7y01p21QiF9BqKDgAgfwLb7Wg2Ovq6W7dvw1ln9ZodjGch1E58AIAwJhIA1q67EqtXr+roa+fNm4dtt9xseET+hFKzIAIAhDGhO3c2Kn19LE+DQqhVIpgAALIntqenB0PD2zOPee+9DzJfv37DtVh63lKTw3JOco1mE1QAALkTPDi4CYsW1TOPuf++B/Hrr5Opr3d1daHRGDY7MIek1iZLcAEAZE50M+cpzkcfHcG33xzDwVdeyzwu1KdBEmtSRJABAGRN+KLFi7B588bMY0b3HQAA7B99OfO4VasuxLp1a42NzQVJtSgr2AAA0xMvYfJHRobQ05P+bVWnT5/GywcOApj+HPDjjxOZ7xfKKiBl/qsIOgAJ30Vo5jz9efed9/HTTz8DAM6cOfNfGNIMDW/HnDlzTA3PCt9zbkoUAQD8FWT1xRdhzZrLM4/Z9+/2JzHa9ud29fpCbBncVHVo1sTS/EBEAQD8LMl5z/5PnTqFVw/O/OB75MjH+O677yu9rw8xbHnaRRWAhKsidXd3o7Hj9sxjxsbGceLE7//7+wP7X8n8us2bN2Lx4sWVxmdSbI2fiDIAgJu71Q03XI/+/iWZx4zunX27sy/l7xPdPd0YaQx1PDZTYrzrt4o2AAmbxct79v/nnydx6NCbs7529Ojn+PLLr7Pf3/M2KObGT0QfAMDOXWz+/PnYunVL5jFvvH4IJ0/+lfr6/tHsVeCKKy7DJZde3NH4qoj9rt9KRQASJgt729At6O3N/vbl9qc/7UZz/lEMcPthWFPjJ1QFIGGi0HmN+dtvJzB++O3MY7795hg+/eSzzGNGGsPo7u4uO7xSNDZ+QvVPhUiKXvYXea9YuQLXrL8685iFCxfgi68+qTC6aUuWnIMbb9yAsbHxyu/VTmvTt1IdgERrIxQJg+vv22/uahgLAJt+JpVboCx524FarYYdzexn/6Zt3boFCxbMr/w+Dzx0/70GhhMVBiBFEoT2MAwMrMfy5cucjmXu3Lm4behWp+fUggEooDUMzz2/51kfY5D4rRExYABKmJicOhvALh/nvvqaq7DyghUz/q41mLt33/GUj3GFjh+Cy2kCyNuM391fr+0Byj1dunLtGuzd90LmMW+OvfpYf732UNH3pHwMQDl35bz+N4D9yR/KPHF5Z/woABwHsDzr/BOTUw/312ulHttSOm6BCpqYnDofwGDOYYf767VfKpxmb87rKwFk/99LKoUBKO5O5M/XixXPUeTr7654DmrBABSXt/2ZAvBSxXOMA8hbQXZNTE7Nq3ge+hcDUMDE5NQAgMtyDvugv177ocp5+uu1GZ8hUvRh+sM4GcAAFFNk21F1+1PmfbgNIiIiIiIiIiIiIiIiIiIiIiIiIqJp/wA5bABvUo/30wAAAABJRU5ErkJggg==">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{color-scheme:dark;--bg:#080d1a;--panel:#10182a;--panel2:#151f34;--line:#24314a;--text:#eaf0ff;--muted:#91a0bb;--accent:#7c8cff;--accent2:#36d6c2;--danger:#ff6b7a;--shadow:0 18px 60px #0005;font-family:'DM Sans',system-ui,sans-serif}
+:root[data-theme="light"]{color-scheme:light;--bg:#f4f6fc;--panel:#fff;--panel2:#edf1fa;--line:#dce3f0;--text:#182238;--muted:#64718a;--accent:#5969e8;--accent2:#079e91;--shadow:0 18px 50px #26345a14}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}body{min-height:100vh;overflow:hidden}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}#particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.22;z-index:0}.ambient{position:fixed;width:420px;height:420px;border-radius:50%;filter:blur(110px);opacity:.12;pointer-events:none;z-index:0}.ambient-one{background:#5c6cff;top:-220px;left:30%}.ambient-two{background:#19bba9;bottom:-260px;right:5%}
+.app-shell{position:relative;z-index:1;display:flex;width:100%;height:100dvh;min-height:0}.sidebar{width:278px;flex:0 0 278px;background:color-mix(in srgb,var(--panel) 94%,transparent);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:22px 16px 14px;min-height:0}.sidebar-header{display:flex;align-items:center;justify-content:space-between;margin:0 4px 28px}.brand{display:flex;gap:11px;align-items:center;color:var(--text);text-decoration:none}.brand-mark,.welcome-orb{display:grid;place-items:center;background:linear-gradient(140deg,#8d9aff,#5264dd);color:white;font-family:'Space Grotesk',sans-serif;font-weight:700;box-shadow:0 8px 28px #6678ff45}.brand-mark{width:39px;height:39px;border-radius:13px;font-size:23px}.brand b{display:block;font:700 16px 'Space Grotesk',sans-serif;letter-spacing:.5px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.6px;margin-top:3px}.primary-btn,.secondary-btn,.danger-btn,.send-btn{border:0;border-radius:11px;padding:11px 15px;font-weight:600;transition:transform .18s,filter .18s,background .18s}.primary-btn{background:linear-gradient(110deg,#6879f5,#8795ff);color:#fff;box-shadow:0 6px 18px #697bfa30}.primary-btn:hover,.send-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.new-chat{width:100%;text-align:left;margin-bottom:20px}.new-chat span{font-size:20px;margin-right:8px}.search-wrap{height:40px;display:flex;align-items:center;gap:8px;padding:0 11px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--muted)}.search-wrap input{border:0!important;background:transparent!important;padding:0!important;min-width:0}.side-label{font-size:9px;font-weight:700;letter-spacing:1.6px;color:var(--muted);margin:22px 8px 9px}.sidebar-nav{overflow:auto;min-height:55px;flex:1}.conv-item{display:flex;align-items:center;gap:5px;padding:9px 8px;border-radius:9px;color:var(--muted);cursor:pointer;font-size:13px}.conv-item:hover,.conv-item.active{background:var(--panel2);color:var(--text)}.conv-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.conv-del{border:0;background:transparent;color:var(--muted);padding:4px;border-radius:6px}.conv-del:hover{background:var(--line);color:var(--text)}.tools-label{margin-top:18px}.tool-nav{display:grid;gap:3px}.nav-btn{display:flex;align-items:center;gap:11px;text-align:left;padding:9px 10px;background:transparent;border:0;border-radius:9px;color:var(--muted);font-size:13px}.nav-btn span{width:19px;text-align:center;color:var(--accent)}.nav-btn:hover,.nav-btn.active{background:var(--panel2);color:var(--text)}.sidebar-bottom{border-top:1px solid var(--line);padding:14px 5px 2px;margin-top:15px;display:grid;grid-template-columns:10px 1fr;align-items:center;gap:3px 8px;color:var(--muted);font-size:11px}.sidebar-bottom small{grid-column:2;font-size:9px;letter-spacing:1px}.online-dot{width:7px;height:7px;border-radius:50%;background:#3bd6a4;box-shadow:0 0 10px #3bd6a4}
+.main{flex:1;min-width:0;display:flex;flex-direction:column;height:100dvh}.topbar{height:76px;flex:0 0 76px;padding:0 30px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(16px)}.topbar-left,.topbar-actions{display:flex;align-items:center;gap:12px}.topbar-title{font:600 15px 'Space Grotesk',sans-serif}.topbar-subtitle{font-size:11px;color:var(--muted);margin-top:3px}.topbar-actions select{max-width:210px}.icon-btn{width:38px;height:38px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:17px}.icon-btn:hover{color:var(--text);border-color:var(--accent)}.menu-btn,.mobile-close{display:none}
+.view{flex:1;min-height:0;display:flex;flex-direction:column}.view[hidden]{display:none!important}.view-chat{padding:0 24px 15px}.chat-area{flex:1;min-height:0;overflow:auto;width:100%;max-width:920px;margin:0 auto;padding:28px 12px 20px;scroll-behavior:smooth}.welcome{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 10px}.welcome-orb{width:66px;height:66px;border-radius:22px;font-size:38px;margin-bottom:20px;box-shadow:0 0 55px #687bff50}.eyebrow{color:var(--accent2);font-size:10px;font-weight:700;letter-spacing:2px;margin:0 0 12px}.welcome h1,.page-heading h1{font:600 clamp(32px,5vw,48px)/1.12 'Space Grotesk',sans-serif;letter-spacing:-1.8px;margin:0}.welcome h1 span{color:var(--accent)}.welcome-copy{max-width:440px;color:var(--muted);font-size:14px;line-height:1.7;margin:16px auto 25px}.welcome-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.welcome-chips button{background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:10px 14px;color:var(--muted);font-size:12px}.welcome-chips button:hover{border-color:var(--accent);color:var(--text)}
+.msg{max-width:85%;margin:0 0 20px;padding:15px 17px;border:1px solid var(--line);border-radius:15px;background:var(--panel);line-height:1.65;overflow-wrap:anywhere}.msg.user{margin-left:auto;background:color-mix(in srgb,var(--accent) 15%,var(--panel));border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}.msg-body{font-size:14px;white-space:pre-wrap}.msg-body pre,.msg-body .code-block{white-space:pre}.msg-body p{margin:0 0 10px}.msg-body p:last-child{margin-bottom:0}.msg-body pre,.code-block{overflow:auto;background:#080d18;color:#dce6ff;padding:13px;border-radius:9px}.msg-meta{font-size:10px;color:var(--muted);margin-top:10px}.msg-actions{display:flex;gap:7px;margin-top:10px}.msg-actions button{background:transparent;border:1px solid var(--line);border-radius:7px;padding:5px 8px;color:var(--muted);font-size:11px}.composer-wrap{width:100%;max-width:920px;margin:0 auto}.composer{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:12px 13px 9px;box-shadow:var(--shadow)}.composer textarea{width:100%;resize:none;min-height:48px;max-height:180px;border:0;background:transparent;padding:8px;color:var(--text);outline:none;line-height:1.5}.composer textarea:focus{outline:none}.composer-tools{display:flex;align-items:center;justify-content:space-between;gap:10px}.composer-hint,.status-bar{font-size:10px;color:var(--muted)}.composer-actions{display:flex;align-items:center;gap:8px}.secondary-btn{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.danger-btn{background:#ff68751a;color:var(--danger);border:1px solid #ff687544}.danger-btn:disabled{opacity:.4;cursor:not-allowed}.send-btn{width:37px;height:37px;padding:0;background:var(--accent);color:white;font-size:22px}.status-bar{text-align:center;padding:10px 0 0}.suggestions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.content-view{overflow:auto;padding:38px clamp(18px,5vw,64px) 55px}.page-heading{margin-bottom:28px}.page-heading h1{font-size:clamp(28px,4vw,38px);letter-spacing:-1px}.page-heading>p:last-child{color:var(--muted);font-size:13px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px;margin:16px 0;box-shadow:var(--shadow)}.panel h3,.content-view h3{font:600 16px 'Space Grotesk',sans-serif;margin:0 0 15px}.content-view input,.content-view textarea,.content-view select,.topbar select{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:9px;color:var(--text);padding:11px 12px;margin:5px 0 12px;min-width:0}.content-view textarea{min-height:110px;resize:vertical}.content-view input[type=file]{padding:9px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row>*{max-width:100%}.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px}.list{display:grid;gap:9px}.result-box{white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:13px;color:var(--text);font:12px/1.6 ui-monospace,monospace}.status{color:var(--muted);padding:8px 0;font-size:13px}.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.overlay{display:none}
+@media(max-width:850px){.sidebar{position:fixed;z-index:20;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-105%);transition:transform .25s;box-shadow:var(--shadow)}.sidebar.open{transform:translateX(0)}.mobile-close,.menu-btn{display:grid}.overlay{position:fixed;inset:0;z-index:19;background:#020617aa;border:0}.overlay.show{display:block}.topbar{padding:0 16px}.topbar-actions{gap:6px}.topbar-actions select{max-width:145px;font-size:11px}.view-chat{padding:0 14px 12px}.content-view{padding:28px 18px 45px}}
+@media(max-width:560px){body,.app-shell,.main{height:100dvh;min-height:0}.topbar{height:65px;flex-basis:65px;padding:0 10px}.topbar-subtitle{display:none}.topbar-title{font-size:13px}.topbar-left{gap:8px}.topbar-actions{gap:5px}.topbar-actions select{max-width:112px;padding:8px 5px;font-size:10px}.topbar-actions .icon-btn{width:33px;height:33px;font-size:14px}.view-chat{padding:0 9px 8px}.chat-area{padding:15px 3px}.welcome h1{font-size:35px}.welcome-copy{font-size:13px}.welcome-chips{gap:6px}.welcome-chips button{font-size:11px;padding:9px 10px}.composer{padding:8px;border-radius:13px}.composer textarea{min-height:44px;font-size:14px}.composer-hint{display:none}.composer-tools{justify-content:flex-end}.composer-actions{width:100%;justify-content:flex-end}.composer-actions .secondary-btn,.composer-actions .danger-btn{padding:9px 11px;font-size:12px}.send-btn{width:39px;height:37px}.status-bar{font-size:9px}.msg{max-width:96%;padding:12px;font-size:13px}.content-view{padding:22px 13px 35px}.panel{padding:14px}.row>*{flex:1}.page-heading h1{font-size:29px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Mobile-specific ergonomics and safe-area handling */
+@media(max-width:850px){
+  .app-shell,.main{width:100%;max-width:100%;overflow:hidden}
+  .sidebar{padding-top:max(18px,env(safe-area-inset-top));padding-bottom:max(14px,env(safe-area-inset-bottom))}
+  .topbar{padding-left:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right))}
+  .view-chat{padding-bottom:max(8px,env(safe-area-inset-bottom))}
+  .content-view{padding-bottom:max(30px,env(safe-area-inset-bottom))}
+  button,select,input,textarea{touch-action:manipulation}
+}
+@media(max-width:380px){
+  .topbar-actions select{max-width:88px}
+  .topbar-actions #btnClear,.topbar-actions #btnExport{display:none}
+  .composer-actions{gap:5px}
+  .composer-actions .secondary-btn,.composer-actions .danger-btn{padding:8px}
+}
+
+/* Provider, model and API-key manager */
+.muted-copy{color:var(--muted);font-size:12px;line-height:1.6;margin:0 0 12px}
+.settings-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 16px}
+.settings-tab{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:10px;padding:10px 15px;font-weight:600;font-size:12px}
+.settings-tab.active{background:color-mix(in srgb,var(--accent) 18%,var(--panel));border-color:var(--accent);color:var(--text)}
+.settings-panel[hidden]{display:none!important}
+.section-title-row{justify-content:space-between;margin-bottom:12px}
+.section-title-row h3{margin-bottom:5px}
+.model-manager-list{display:grid;gap:8px}
+.model-manager-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+.model-manager-item>div{min-width:0;display:grid;gap:4px}
+.model-manager-item strong{font-size:13px;overflow-wrap:anywhere}
+.model-manager-item small{font-size:10px;color:var(--muted)}
+.model-manager-item button{white-space:nowrap;padding:8px 10px;font-size:11px}
+.secret-field-label{display:block;font-size:12px;color:var(--muted);margin:8px 0}
+.secret-input-row{display:flex;gap:8px;align-items:center}
+.secret-input-row input{flex:1;min-width:0}
+.secret-input-row button{white-space:nowrap;margin:5px 0 12px}
+@media(max-width:560px){.settings-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.settings-tab{padding:9px 5px;font-size:11px}.model-manager-item{align-items:flex-start;flex-direction:column}.model-manager-item button{width:100%}.secret-input-row{align-items:stretch;flex-direction:column}.secret-input-row button{margin-top:0}}
+.model-install-row{display:flex;gap:9px;align-items:center;margin:10px 0 14px}.model-install-row input{flex:1;min-width:0;margin:5px 0}.model-install-row button{white-space:nowrap}@media(max-width:560px){.model-install-row{align-items:stretch;flex-direction:column}.model-install-row button{width:100%}}
+
+.suggestions[hidden]{display:none!important}
+
+</style>
+</head>
+<body>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a class="brand" href="#" aria-label="JARVES AI início"><span class="brand-mark">J</span><span><b>JARVES AI</b><small>2.3.0 · INTELLIGENCE</small></span></a>
+      <button class="icon-btn mobile-close" id="btnCloseSidebar" aria-label="Fechar menu">×</button>
+    </div>
+    <button class="primary-btn new-chat" id="btnNewChat"><span>＋</span> Nova conversa</button>
+    <label class="search-wrap"><span>⌕</span><input type="search" id="searchHistory" placeholder="Buscar conversas..." aria-label="Pesquisar histórico"></label>
+    <div class="side-label">HISTÓRICO</div>
+    <nav class="sidebar-nav" id="convList" aria-label="Conversas"></nav>
+    <div class="side-label tools-label">FERRAMENTAS</div>
+    <nav class="tool-nav">
+      <button class="nav-btn" data-view="agents"><span>✧</span> Agentes</button>
+      <button class="nav-btn" data-view="tasks"><span>◷</span> Tarefas</button>
+      <button class="nav-btn" data-view="files"><span>▤</span> Arquivos e código</button>
+      <button class="nav-btn" data-view="memory"><span>◈</span> Memória</button>
+      <button class="nav-btn" data-view="settings"><span>⚙</span> Configurações</button>
+      <button class="nav-btn" data-view="diagnostics"><span>⌁</span> Diagnóstico</button>
+      <button class="nav-btn" data-view="reports"><span>▧</span> Relatórios</button>
+    </nav>
+    <div class="sidebar-bottom"><span class="online-dot"></span><span>JARVES pronto para iniciar</span><small>v2.3.0</small></div>
+  </aside>
+  <button class="overlay" id="overlay" aria-label="Fechar menu"></button>
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left"><button class="icon-btn menu-btn" id="btnMenu" aria-label="Abrir menu">☰</button><div><div class="topbar-title" id="convTitle">Nova conversa</div><div class="topbar-subtitle">Seu espaço de inteligência</div></div></div>
+      <div class="topbar-actions">
+        <select id="modelSelect" aria-label="Selecionar modelo"><option value="">Modelo automático</option></select>
+        <button class="icon-btn" id="btnTheme" aria-label="Alternar tema" title="Alternar tema">◐</button>
+        <button class="icon-btn" id="btnClear" aria-label="Limpar tela" title="Limpar tela">⌫</button>
+        <button class="icon-btn" id="btnExport" aria-label="Exportar conversa" title="Exportar conversa">⇩</button>
+      </div>
+    </header>
+    <section class="view view-chat" id="view-chat">
+      <div class="chat-area" id="chatArea" role="log" aria-live="polite">
+        <div class="welcome" id="welcomePanel"><div class="welcome-orb">J</div><p class="eyebrow">JARVES AI · 2.3.0</p><h1>Como posso ajudar<br><span>você hoje?</span></h1><p class="welcome-copy">Pergunte, crie, programe ou organize suas ideias. Sua próxima descoberta começa aqui.</p><div class="welcome-chips"><button type="button" data-prompt="Explique como você pode me ajudar.">✦ Conhecer o JARVES</button><button type="button" data-prompt="Ajude-me a criar um projeto de software.">⌘ Criar um projeto</button><button type="button" data-prompt="Analise este código e sugira melhorias.">⌁ Analisar código</button></div></div>
+      </div>
+      <div class="suggestions" id="suggestions"></div>
+      <div class="composer-wrap"><div class="composer">
+        <textarea id="input" placeholder="Envie uma mensagem ao JARVES..." rows="1" aria-label="Mensagem"></textarea>
+        <div class="composer-tools"><span class="composer-hint">Enter para enviar · Shift + Enter para nova linha</span><div class="composer-actions"><button class="secondary-btn" id="btnVoice" type="button">◖ Voz</button><button class="danger-btn" id="btnStop" type="button" disabled>Parar</button><button class="send-btn" id="btnSend" type="button" aria-label="Enviar mensagem">↑</button></div></div>
+      </div><div class="status-bar" id="statusBar">A IA pode cometer erros. Verifique informações importantes.</div></div>
+    </section>
+    <section class="view content-view" id="view-agents" hidden><div class="page-heading"><p class="eyebrow">AUTOMAÇÃO INTELIGENTE</p><h1>Agentes especializados</h1><p>Escolha um agente e delegue uma tarefa.</p></div><div class="card-grid" id="agentsGrid"></div><div class="panel"><h3>Executar agente</h3><select id="agentSelect"></select><textarea id="agentTask" placeholder="Descreva a tarefa para o agente..."></textarea><button class="primary-btn" id="btnRunAgent">Executar agente</button><pre id="agentResult" class="result-box"></pre></div></section>
+    <section class="view content-view" id="view-tasks" hidden><div class="page-heading"><p class="eyebrow">ORGANIZAÇÃO</p><h1>Planejamento de tarefas</h1><p>Transforme objetivos em etapas organizadas.</p></div><div class="panel"><textarea id="taskGoal" placeholder="Descreva seu objetivo..."></textarea><div class="row"><button class="primary-btn" id="btnPlan">Criar planejamento</button><button class="secondary-btn" id="btnRunTask">Criar e executar</button></div><pre id="planPreview" class="result-box"></pre></div><h3>Tarefas</h3><div id="taskList" class="list"></div></section>
+    <section class="view content-view" id="view-files" hidden><div class="page-heading"><p class="eyebrow">ESPAÇO DE TRABALHO</p><h1>Arquivos e código</h1><p>Importe arquivos ou peça uma análise de código.</p></div><div class="panel"><input type="file" id="fileInput" multiple><button class="primary-btn" id="btnUpload">Importar arquivos</button><div id="uploadStatus" class="status"></div></div><div id="fileList" class="list"></div><div class="panel"><h3>Analisar código</h3><textarea id="codeInput" placeholder="Cole seu código aqui..."></textarea><button class="primary-btn" id="btnAnalyzeCode">Analisar código</button><pre id="codeAnalysis" class="result-box"></pre></div></section>
+    <section class="view content-view" id="view-memory" hidden><div class="page-heading"><p class="eyebrow">CONTEXTO PERSISTENTE</p><h1>Memória</h1><p>Organize informações úteis para suas conversas.</p></div><div class="panel"><input id="memSubject" placeholder="Assunto"><textarea id="memContent" placeholder="Conteúdo..."></textarea><select id="memKind"><option value="note">Nota</option><option value="preference">Preferência</option><option value="fact">Fato</option></select><button class="primary-btn" id="btnSaveMem">Salvar memória</button></div><input type="search" id="memSearch" placeholder="Pesquisar memória..."><div id="memList" class="list"></div></section>
+    <section class="view content-view" id="view-reports" hidden><div class="page-heading"><p class="eyebrow">QUALIDADE DO SISTEMA</p><h1>Relatórios e correções</h1></div><div class="row"><a class="secondary-btn" href="/diagnostico" target="_blank" rel="noopener">Abrir relatório HTML ↗</a><button class="primary-btn" id="btnRefreshReports">Atualizar</button></div><div id="resolvedBugs" class="list"></div><pre id="reportRaw" class="result-box"></pre></section>
+    <section class="view content-view" id="view-diagnostics" hidden><div class="page-heading"><p class="eyebrow">SAÚDE DO SISTEMA</p><h1>Diagnóstico</h1><p>Verifique o estado dos serviços e exporte relatórios.</p></div><div class="row"><button class="primary-btn" id="btnRunDiag">Executar diagnóstico</button><button class="secondary-btn" id="btnSpeedTest">Teste de velocidade</button><a class="secondary-btn" id="btnExportDiagJson" href="/api/diagnostics/export?format=json" target="_blank" rel="noopener">JSON ↗</a><a class="secondary-btn" id="btnExportDiagTxt" href="/api/diagnostics/export?format=txt" target="_blank" rel="noopener">TXT ↗</a><a class="secondary-btn" id="btnExportDiagHtml" href="/api/diagnostics/export?format=html" target="_blank" rel="noopener">HTML ↗</a></div><div id="diagSummary" class="status"></div><div id="diagErrors" class="list"></div><pre id="diagRaw" class="result-box"></pre></section>
+    <section class="view content-view" id="view-settings" hidden><div class="page-heading"><p class="eyebrow">PERSONALIZAÇÃO</p><h1>Configurações</h1><p>Ajuste os provedores e o comportamento do assistente.</p></div><div class="settings-tabs" role="tablist" aria-label="Gerenciamento de IA"><button class="settings-tab active" data-settings-tab="connection" type="button">Conexão</button><button class="settings-tab" data-settings-tab="models" type="button">Modelos IA</button><button class="settings-tab" data-settings-tab="keys" type="button">API keys</button></div>
+      <section class="settings-panel active" data-settings-panel="connection"><div class="panel"><h3>Provedor e conexão</h3><p class="muted-copy">Use Ollama local gratuitamente ou um serviço compatível com a API OpenAI.</p><div class="panel form-grid" id="settingsForm"></div><div class="row"><button class="primary-btn" id="btnSaveSettings">Salvar configurações</button><button class="secondary-btn" id="btnTestProvider">Testar conexão</button></div><div id="settingsStatus" class="status" aria-live="polite"></div></div></section>
+      <section class="settings-panel" data-settings-panel="models" hidden><div class="panel"><div class="row section-title-row"><div><h3>Biblioteca de modelos</h3><p class="muted-copy">Consulte os modelos disponíveis no provedor selecionado.</p></div><button class="secondary-btn" id="btnRefreshModels" type="button">Atualizar lista</button></div><div id="modelManagerStatus" class="status" aria-live="polite"></div><div class="model-install-row"><input id="ollamaPullName" type="text" placeholder="Ex.: qwen3.5:4b" aria-label="Nome do modelo Ollama"><button class="primary-btn" id="btnPullModel" type="button">Baixar modelo Ollama</button></div><div id="modelManagerList" class="model-manager-list"></div></div></section>
+      <section class="settings-panel" data-settings-panel="keys" hidden><div class="panel"><h3>Gerenciador de API keys</h3><p class="muted-copy">Cadastre uma chave emitida pelo provedor. O JARVES não cria chaves de terceiros. A chave nunca é exibida novamente depois de salva.</p><label class="secret-field-label" for="apiKeyInput">API key do provedor compatível</label><div class="secret-input-row"><input id="apiKeyInput" type="password" autocomplete="new-password" placeholder="Cole sua chave aqui"><button class="secondary-btn" id="btnSaveApiKey" type="button">Salvar chave</button></div><div id="apiKeyStatus" class="status" aria-live="polite"></div><button class="danger-btn" id="btnDeleteApiKey" type="button">Remover chave salva</button></div></section>
+      <div class="panel"><h3>Diagnóstico rápido</h3><pre id="diag" class="result-box"></pre><button class="secondary-btn" id="btnDiag">Atualizar diagnóstico</button></div></section>
+  </main>
+</div>
+<script>
+/* JARVES BASE - IA base offline (sem Ollama, sem internet). Funciona dentro do navegador e do Node.
+ * Entende conversa basica, contas, data/hora e cria jogos HTML prontos para jogar. */
+(() => {
+  'use strict';
+  const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const MENU_TAG = '<!--menu-jogos-->';
+
+  const HEAD = (title) => '<!DOCTYPE html>\n<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + title + '</title>\n' +
+    '<style>body{margin:0;background:#0b1020;color:#e7ebff;font-family:system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh}canvas{background:#111830;border:2px solid #6c7cff;border-radius:8px;touch-action:none;max-width:96vw}button{font:inherit}</style></head><body>\n';
+
+  const GAMES = {
+    snake: { nome: 'Cobrinha', html: HEAD('Cobrinha') + `<h2>🐍 Cobrinha — <span id="s">0</span> pts</h2><canvas id="c" width="400" height="400"></canvas><p>Setas ou WASD • deslize no celular • Espaço reinicia</p>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d'),N=20,S=20;
+let snake,dir,next,food,score,over,timer;
+function reset(){snake=[{x:10,y:10},{x:9,y:10},{x:8,y:10}];dir={x:1,y:0};next=dir;score=0;over=false;place();document.getElementById('s').textContent=0;clearInterval(timer);timer=setInterval(tick,110);draw();}
+function place(){do{food={x:Math.floor(Math.random()*N),y:Math.floor(Math.random()*N)};}while(snake.some(p=>p.x===food.x&&p.y===food.y));}
+function tick(){dir=next;const h={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+ if(h.x<0||h.y<0||h.x>=N||h.y>=N||snake.some(p=>p.x===h.x&&p.y===h.y)){over=true;clearInterval(timer);draw();return;}
+ snake.unshift(h);if(h.x===food.x&&h.y===food.y){score++;document.getElementById('s').textContent=score;place();}else snake.pop();draw();}
+function draw(){x.fillStyle='#111830';x.fillRect(0,0,400,400);x.fillStyle='#ff5c7a';x.fillRect(food.x*S+2,food.y*S+2,S-4,S-4);
+ snake.forEach((p,i)=>{x.fillStyle=i?'#6cf0a8':'#b6ffd6';x.fillRect(p.x*S+1,p.y*S+1,S-2,S-2);});
+ if(over){x.fillStyle='rgba(0,0,0,.65)';x.fillRect(0,0,400,400);x.fillStyle='#fff';x.font='bold 24px system-ui';x.textAlign='center';x.fillText('Fim de jogo! Espaço reinicia',200,205);}}
+function turn(dx,dy){if(dx===-dir.x&&dy===-dir.y)return;next={x:dx,y:dy};}
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();
+ if(k==='arrowup'||k==='w')turn(0,-1);else if(k==='arrowdown'||k==='s')turn(0,1);else if(k==='arrowleft'||k==='a')turn(-1,0);else if(k==='arrowright'||k==='d')turn(1,0);else if(k===' ')reset();
+ if(k.startsWith('arrow')||k===' ')e.preventDefault();});
+let t0;c.addEventListener('touchstart',e=>{t0=e.touches[0];});
+c.addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-t0.clientX,dy=t.clientY-t0.clientY;if(Math.abs(dx)>Math.abs(dy))turn(dx>0?1:-1,0);else turn(0,dy>0?1:-1);});
+reset();
+<\/script></body></html>` },
+
+    pong: { nome: 'Pong', html: HEAD('Pong') + `<h2>🏓 Pong — Você <span id="a">0</span> × <span id="b">0</span> PC</h2><canvas id="c" width="600" height="400"></canvas><p>Mouse, toque, W/S ou setas movem a raquete</p>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d'),W=600,H=400,PH=70;
+let p=165,a=165,bx,by,vx,vy,ps=0,as=0;
+function serve(d){bx=W/2;by=H/2;vx=4*d;vy=Math.random()*4-2;}
+function clampP(v){return Math.max(0,Math.min(H-PH,v));}
+function pos(y){const r=c.getBoundingClientRect();p=clampP((y-r.top)*(H/r.height)-PH/2);}
+c.addEventListener('mousemove',e=>pos(e.clientY));
+c.addEventListener('touchmove',e=>{pos(e.touches[0].clientY);e.preventDefault();},{passive:false});
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(k==='w'||k==='arrowup')p=clampP(p-26);if(k==='s'||k==='arrowdown')p=clampP(p+26);if(k.startsWith('arrow'))e.preventDefault();});
+function loop(){
+ a=clampP(a+Math.max(-3.4,Math.min(3.4,(by-PH/2)-a)));
+ bx+=vx;by+=vy;
+ if(by<6||by>H-6)vy=-vy;
+ if(vx<0&&bx<24&&bx>10&&by>p&&by<p+PH){vx=Math.min(12,-vx*1.06);vy+=((by-(p+PH/2))/(PH/2))*3;}
+ if(vx>0&&bx>W-24&&bx<W-10&&by>a&&by<a+PH){vx=-Math.min(12,vx*1.06);vy+=((by-(a+PH/2))/(PH/2))*3;}
+ vy=Math.max(-9,Math.min(9,vy));
+ if(bx<0){as++;serve(1);}if(bx>W){ps++;serve(-1);}
+ document.getElementById('a').textContent=ps;document.getElementById('b').textContent=as;
+ x.fillStyle='#111830';x.fillRect(0,0,W,H);x.fillStyle='#2b3566';for(let y=0;y<H;y+=24)x.fillRect(W/2-2,y,4,12);
+ x.fillStyle='#6c7cff';x.fillRect(10,p,10,PH);x.fillStyle='#ff5c7a';x.fillRect(W-20,a,10,PH);
+ x.fillStyle='#fff';x.beginPath();x.arc(bx,by,7,0,7);x.fill();
+ requestAnimationFrame(loop);}
+serve(1);loop();
+<\/script></body></html>` },
+
+    velha: { nome: 'Jogo da Velha', html: HEAD('Jogo da Velha') + `<style>#g{display:grid;grid-template-columns:repeat(3,100px);gap:8px}#g button{width:100px;height:100px;font-size:48px;background:#111830;color:#e7ebff;border:2px solid #6c7cff;border-radius:10px;cursor:pointer}</style>
+<h2>⭕ Jogo da Velha</h2><p id="m">Você é o X. Sua vez!</p><div id="g"></div><p><button onclick="init()">Reiniciar</button></p>
+<script>
+const L=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+let b,over;
+function win(b){for(const l of L)if(b[l[0]]&&b[l[0]]===b[l[1]]&&b[l[0]]===b[l[2]])return b[l[0]];return b.includes('')?null:'E';}
+function mm(b,t){const w=win(b);if(w==='O')return 1;if(w==='X')return -1;if(w==='E')return 0;let best=t==='O'?-2:2;
+ for(let i=0;i<9;i++)if(!b[i]){b[i]=t;const s=mm(b,t==='O'?'X':'O');b[i]='';best=t==='O'?Math.max(best,s):Math.min(best,s);}return best;}
+function ai(){let bi=-1,bs=-2;for(let i=0;i<9;i++)if(!b[i]){b[i]='O';const s=mm(b,'X');b[i]='';if(s>bs){bs=s;bi=i;}}b[bi]='O';}
+function render(){const g=document.getElementById('g');g.innerHTML='';b.forEach((v,i)=>{const e=document.createElement('button');e.textContent=v;e.onclick=()=>play(i);g.appendChild(e);});}
+function end(){const w=win(b);if(!w)return false;over=true;document.getElementById('m').textContent=w==='X'?'Você venceu! 🎉':w==='O'?'O computador venceu!':'Empate!';return true;}
+function play(i){if(over||b[i])return;b[i]='X';if(!end()){ai();end();}render();}
+function init(){b=Array(9).fill('');over=false;document.getElementById('m').textContent='Você é o X. Sua vez!';render();}
+init();
+<\/script></body></html>` },
+
+    memoria: { nome: 'Jogo da Memória', html: HEAD('Jogo da Memória') + `<style>#g{display:grid;grid-template-columns:repeat(4,80px);gap:8px}#g button{width:80px;height:80px;font-size:36px;background:#111830;color:#e7ebff;border:2px solid #6c7cff;border-radius:10px;cursor:pointer}</style>
+<h2>🧠 Memória — jogadas: <span id="n">0</span></h2><p id="m">Encontre todos os pares.</p><div id="g"></div><p><button onclick="init()">Reiniciar</button></p>
+<script>
+const E=['🐶','🐱','🦊','🐼','🐸','🐵','🦁','🐙'];
+let cards,shown,open,lock,moves,found;
+function init(){cards=[...E,...E].sort(()=>Math.random()-.5);shown=Array(16).fill(false);open=[];lock=false;moves=0;found=0;document.getElementById('n').textContent=0;document.getElementById('m').textContent='Encontre todos os pares.';render();}
+function render(){const g=document.getElementById('g');g.innerHTML='';cards.forEach((v,i)=>{const e=document.createElement('button');e.textContent=shown[i]?v:'❓';e.onclick=()=>flip(i);g.appendChild(e);});}
+function flip(i){if(lock||shown[i])return;shown[i]=true;open.push(i);render();
+ if(open.length===2){moves++;document.getElementById('n').textContent=moves;const [p,q]=open;
+  if(cards[p]===cards[q]){open=[];found++;if(found===8)document.getElementById('m').textContent='Parabéns! Você terminou em '+moves+' jogadas 🎉';}
+  else{lock=true;setTimeout(()=>{shown[p]=false;shown[q]=false;open=[];lock=false;render();},700);}}}
+init();
+<\/script></body></html>` },
+  };
+
+  const GAME_WORDS = {
+    snake: ['cobrinha', 'cobra', 'snake'],
+    pong: ['pong', 'raquete', 'tenis de mesa'],
+    velha: ['velha', 'tic tac', 'tictactoe', 'xis'],
+    memoria: ['memoria', 'memory', 'pares'],
+  };
+  const ORDER = ['snake', 'pong', 'velha', 'memoria'];
+
+  function gameReply(key) {
+    const g = GAMES[key];
+    return 'Pronto! Aqui está o **' + g.nome + '**, um jogo completo em um único arquivo HTML. Salve como `jogo.html` e abra no navegador (ou cole em *Arquivos e código*):\n\n```html\n' + g.html + '\n```\n\nQuer outro jogo, ou mudar algo neste (velocidade, cores, tamanho)?';
+  }
+  function menuReply() {
+    return 'Vamos fazer um jogo! Antes de criar, me diga qual você quer (responda com o número ou o nome):\n\n1. **Cobrinha** (snake)\n2. **Pong** contra o computador\n3. **Jogo da Velha** contra o computador\n4. **Jogo da Memória** (pares de bichinhos)\n\nTodos saem em HTML pronto para jogar, no PC e no celular.';
+  }
+
+  function pickGame(q, menuBefore) {
+    for (const k of ORDER) if (GAME_WORDS[k].some(w => new RegExp('(^|[^a-z])' + w + '([^a-z]|$)').test(q))) return k;
+    if (menuBefore) { const m = q.match(/^\s*(?:opcao\s*)?([1-4])\b/); if (m) return ORDER[Number(m[1]) - 1]; }
+    return null;
+  }
+
+  function tryMath(raw) {
+    const s = String(raw).trim().replace(/^quanto (e|eh|da)\s+/i, '').replace(/[=?]+$/, '').trim();
+    if (!/^[\d\s+\-*/().,%^x×÷]+$/.test(s) || !/[+\-*/%^x×÷]/.test(s) || !/\d/.test(s)) return null;
+    const expr = s.replace(/,/g, '.').replace(/\^/g, '**').replace(/[x×]/g, '*').replace(/÷/g, '/');
+    try {
+      const v = Function('"use strict";return (' + expr + ')')();
+      if (typeof v === 'number' && isFinite(v)) return Number(v.toPrecision(12)).toString();
+    } catch { /* nao e uma conta valida */ }
+    return null;
+  }
+
+  function reply(messages) {
+    const msgs = Array.isArray(messages) ? messages : [];
+    const lastUser = [...msgs].reverse().find(m => m.role === 'user');
+    const user = String(lastUser?.content || '');
+    const q = norm(user).trim();
+    const prevAssistant = [...msgs].reverse().find(m => m.role === 'assistant');
+    const menuBefore = String(prevAssistant?.content || '').includes('Antes de criar, me diga qual você quer');
+
+    const game = pickGame(q, menuBefore);
+    const wantsGame = /(^|[^a-z])(jogo|jogos|game|games|joguinho)([^a-z]|$)/.test(q);
+    if (game && (wantsGame || menuBefore || /cobrinha|snake|pong|velha|tictactoe|tic tac/.test(q))) return gameReply(game);
+    if (wantsGame || (/(^|[^a-z])html([^a-z]|$)/.test(q) && /faz|cria|gera|monta/.test(q))) return menuReply();
+
+    const m = tryMath(user);
+    if (m !== null) return 'Resultado: **' + m + '**';
+    if (/que horas|horas sao|hora atual/.test(q)) return 'Agora são ' + new Date().toLocaleTimeString('pt-BR') + '.';
+    if (/data de hoje|que dia (e|eh) hoje|dia de hoje/.test(q)) return 'Hoje é ' + new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) + '.';
+    if (/^(oi|ola|opa|e ai|eai|bom dia|boa tarde|boa noite|hey|hello)\b/.test(q)) return 'Olá! Eu sou o JARVES, funcionando com a **IA base** (offline, sem precisar de internet). Posso criar jogos em HTML, fazer contas e responder o básico. Para conversar sobre qualquer assunto, instale o Ollama e um modelo: o JARVES detecta sozinho.\n\nO que vamos fazer?';
+    if (/quem (e|eh) voce|seu nome|quem te criou/.test(q)) return 'Sou o JARVES AI. Agora estou na **IA base** local; se o Ollama estiver ligado, passo a usar o modelo dele automaticamente.';
+    if (/ajuda|o que voce (faz|sabe)|comandos|funcoes/.test(q)) return 'Na **IA base** eu faço: jogos HTML prontos (cobrinha, pong, velha, memória), contas, data e hora. Com o **Ollama** ligado eu converso sobre qualquer assunto, escrevo textos e códigos. Digite "faz um jogo" para começar.';
+
+    return 'Estou na **IA base** (offline), que entende jogos, contas, data/hora e o básico. Para esse tipo de pedido preciso de um modelo completo: instale o Ollama (ollama.com), rode `ollama pull qwen3:4b` e reabra o JARVES; ele detecta sozinho. Enquanto isso, que tal um jogo? Digite "faz um jogo".';
+  }
+
+
+  // ---------- Motor de geracao Sol 6.1 (offline): planeja e devolve arquivos ----------
+  function seeded(text) {
+    let seed = 0; for (const ch of text) seed = (seed * 31 + ch.charCodeAt(0)) >>> 0;
+    return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  }
+  function svgArt(prompt) {
+    const q = norm(prompt), rnd = seeded(q || 'jarves');
+    const night = /noite|lua|estrela|escuro|espaco|galaxia|cosmos/.test(q);
+    const sea = /mar|oceano|praia|onda/.test(q), city = /cidade|predio|urban|cyber|futur/.test(q), forest = /floresta|arvore|mato|natureza|bosque/.test(q);
+    const h = Math.floor(rnd() * 60) + (night ? 230 : 0);
+    const top = night ? 'hsl(' + h + ',70%,8%)' : 'hsl(' + (h + 200) % 360 + ',75%,55%)';
+    const mid = night ? 'hsl(' + (h + 40) + ',60%,22%)' : 'hsl(' + (h + 20) + ',90%,65%)';
+    const bot = night ? 'hsl(' + (h + 60) + ',50%,32%)' : 'hsl(' + (h + 5) + ',95%,72%)';
+    let o = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" width="1024" height="768">\n<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + top + '"/><stop offset=".6" stop-color="' + mid + '"/><stop offset="1" stop-color="' + bot + '"/></linearGradient>' +
+      '<radialGradient id="glow"><stop offset="0" stop-color="' + (night ? '#fff7d6' : '#fff3b0') + '"/><stop offset="1" stop-color="' + (night ? '#fff7d6' : '#ffd36b') + '" stop-opacity="0"/></radialGradient></defs>\n';
+    o += '<rect width="1024" height="768" fill="url(#sky)"/>\n';
+    if (night) for (let i = 0; i < 90; i++) o += '<circle cx="' + Math.floor(rnd() * 1024) + '" cy="' + Math.floor(rnd() * 420) + '" r="' + (rnd() * 1.8 + .4).toFixed(1) + '" fill="#fff" opacity="' + (rnd() * .7 + .3).toFixed(2) + '"/>';
+    const sx = 220 + Math.floor(rnd() * 580), sy = night ? 140 + Math.floor(rnd() * 80) : 330 + Math.floor(rnd() * 60);
+    o += '\n<circle cx="' + sx + '" cy="' + sy + '" r="190" fill="url(#glow)"/><circle cx="' + sx + '" cy="' + sy + '" r="' + (night ? 48 : 70) + '" fill="' + (night ? '#f5f1dc' : '#fff1a8') + '"/>\n';
+    const layer = (base, amp, col, step) => { let d = 'M0 768 L0 ' + base; for (let x = 0; x <= 1024; x += step) d += ' L' + x + ' ' + Math.floor(base - rnd() * amp); return '<path d="' + d + ' L1024 768 Z" fill="' + col + '"/>\n'; };
+    if (!sea || forest) { o += layer(520, 190, night ? '#1a1642' : 'hsl(' + (h + 250) % 360 + ',35%,38%)', 64); o += layer(600, 120, night ? '#100d2e' : 'hsl(' + (h + 260) % 360 + ',40%,26%)', 48); }
+    if (sea) {
+      o += '<rect y="470" width="1024" height="298" fill="' + (night ? '#0a1d4a' : '#1f6fb5') + '"/>\n';
+      for (let r = 0; r < 7; r++) { let d = 'M0 ' + (500 + r * 38); for (let x = 0; x <= 1024; x += 32) d += ' Q' + (x + 16) + ' ' + (500 + r * 38 + (x / 32 % 2 ? 12 : -12)) + ' ' + (x + 32) + ' ' + (500 + r * 38); o += '<path d="' + d + '" stroke="#ffffff" stroke-opacity=".28" fill="none" stroke-width="2"/>\n'; }
+    }
+    if (city) for (let x = 0; x < 1024; x += 56) { const bh = 120 + Math.floor(rnd() * 300); o += '<rect x="' + x + '" y="' + (768 - bh) + '" width="50" height="' + bh + '" fill="' + (night ? '#0b0a22' : '#2a2f55') + '"/>'; for (let y = 768 - bh + 14; y < 750; y += 24) if (rnd() > .45) o += '<rect x="' + (x + 10) + '" y="' + y + '" width="8" height="10" fill="#ffd76b"/><rect x="' + (x + 30) + '" y="' + y + '" width="8" height="10" fill="#7be8ff"/>'; o += '\n'; }
+    if (forest) for (let i = 0; i < 22; i++) { const x = Math.floor(rnd() * 1024), t = 560 + Math.floor(rnd() * 120), s = 50 + Math.floor(rnd() * 60); o += '<rect x="' + (x - 5) + '" y="' + (t + s) + '" width="10" height="40" fill="#3a2414"/><polygon points="' + x + ',' + (t - s) + ' ' + (x - s * .7) + ',' + (t + s) + ' ' + (x + s * .7) + ',' + (t + s) + '" fill="hsl(' + (120 + Math.floor(rnd() * 30)) + ',55%,' + (night ? 14 : 28) + '%)"/>\n'; }
+    return o + '<text x="512" y="735" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#ffffff" opacity=".75">' + String(prompt).replace(/[<>&"]/g, '').slice(0, 60) + '</text>\n</svg>\n';
+  }
+
+  function siteFiles(prompt) {
+    const title = String(prompt).replace(/^(faz|cria|gera|monta)\s+(um|uma)?\s*(site|pagina|landing)?\s*(de|do|da|para)?\s*/i, '').replace(/[<>&"]/g, '').trim().slice(0, 60) || 'Meu site';
+    return [
+      { name: 'index.html', mime: 'text/html', content: '<!DOCTYPE html>\n<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + title + '</title>\n<link rel="stylesheet" href="style.css"></head><body>\n<header><h1>' + title + '</h1><nav><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a></nav></header>\n<section class="hero"><h2>Bem-vindo a ' + title + '</h2><p>Uma página moderna, rápida e que funciona no PC e no celular.</p><button id="cta">Fale conosco</button></section>\n<section id="sobre"><h3>Sobre</h3><p>Escreva aqui a história e o objetivo do projeto.</p></section>\n<section id="servicos"><h3>Serviços</h3><div class="grid"><div class="card">⚡ Rápido</div><div class="card">🔒 Seguro</div><div class="card">🎨 Bonito</div></div></section>\n<section id="contato"><h3>Contato</h3><p id="msg">Clique no botão acima para entrar em contato.</p></section>\n<script src="script.js"><\/script></body></html>\n' },
+      { name: 'style.css', mime: 'text/css', content: ':root{--c:#6c7cff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#0b1020;color:#e7ebff;line-height:1.6}header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:16px 6vw;border-bottom:1px solid #24314a}nav a{color:#9fb0ff;margin-left:16px;text-decoration:none}section{padding:48px 6vw}.hero{text-align:center;padding:90px 6vw;background:linear-gradient(160deg,#18204a,#0b1020)}.hero h2{font-size:clamp(28px,6vw,52px);margin:0}button{background:var(--c);color:#fff;border:0;border-radius:10px;padding:12px 22px;font-size:16px;cursor:pointer}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}.card{background:#151f34;border:1px solid #24314a;border-radius:14px;padding:24px;text-align:center;font-size:20px}\n' },
+      { name: 'script.js', mime: 'text/javascript', content: "document.getElementById('cta').addEventListener('click',function(){document.getElementById('msg').textContent='Obrigado! Entraremos em contato em breve.';document.getElementById('contato').scrollIntoView({behavior:'smooth'});});\n" },
+    ];
+  }
+  const TODO_HTML = HEAD('Tarefas') + `<style>#w{width:min(440px,94vw)}input{width:70%;padding:12px;border-radius:10px;border:1px solid #24314a;background:#111830;color:#fff}li{display:flex;justify-content:space-between;background:#151f34;margin:8px 0;padding:12px;border-radius:10px;list-style:none;cursor:pointer}li.f span{text-decoration:line-through;opacity:.5}ul{padding:0}</style>
+<div id="w"><h2>✅ Lista de tarefas</h2><input id="t" placeholder="Nova tarefa"> <button onclick="add()">Adicionar</button><ul id="l"></ul></div>
+<script>
+let T=[];try{T=JSON.parse(localStorage.getItem('t')||'[]');}catch(e){}
+function save(){try{localStorage.setItem('t',JSON.stringify(T));}catch(e){}}
+function render(){const l=document.getElementById('l');l.innerHTML='';T.forEach((x,i)=>{const li=document.createElement('li');if(x.f)li.className='f';const s=document.createElement('span');s.textContent=x.n;const d=document.createElement('b');d.textContent='✕';d.onclick=e=>{e.stopPropagation();T.splice(i,1);save();render();};li.onclick=()=>{x.f=!x.f;save();render();};li.append(s,d);l.appendChild(li);});}
+function add(){const i=document.getElementById('t');if(!i.value.trim())return;T.push({n:i.value.trim(),f:false});i.value='';save();render();}
+document.getElementById('t').addEventListener('keydown',e=>{if(e.key==='Enter')add();});render();
+<\/script></body></html>`;
+  const CALC_HTML = HEAD('Calculadora') + `<style>#k{display:grid;grid-template-columns:repeat(4,70px);gap:8px}#k button{height:60px;font-size:22px;background:#151f34;color:#fff;border:1px solid #24314a;border-radius:12px}#d{width:310px;background:#111830;border-radius:12px;padding:16px;font-size:30px;text-align:right;margin-bottom:10px;min-height:40px}</style>
+<div><div id="d">0</div><div id="k"></div></div>
+<script>
+let e='';const d=document.getElementById('d'),k=document.getElementById('k');
+['7','8','9','/','4','5','6','*','1','2','3','-','0','.','=','+','C','(',')','⌫'].forEach(t=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{if(t==='C')e='';else if(t==='⌫')e=e.slice(0,-1);else if(t==='='){try{if(/^[0-9+\\-*/.() ]+$/.test(e))e=String(Function('return ('+e+')')());}catch(x){e='Erro';}}else{if(e==='Erro')e='';e+=t;}d.textContent=e||'0';};k.appendChild(b);});
+<\/script></body></html>`;
+
+  function detectType(q) {
+    if (/imagem|foto|desenho|arte|logo|paisagem|pintura|ilustracao|wallpaper|quadro|floresta|montanha|por do sol|ceu estrelado/.test(q)) return 'imagem';
+    if (/calculadora/.test(q)) return 'app-calc';
+    if (/tarefa|todo|lista de/.test(q)) return 'app-todo';
+    if (/site|pagina|landing|portfolio/.test(q)) return 'site';
+    if (pickGame(q, false) || /jogo|game/.test(q)) return 'jogo';
+    return 'site';
+  }
+  // Devolve { type, plan:[...], files:[{name,mime,content}] }
+  function generate(prompt, type) {
+    const q = norm(prompt);
+    const t = (type && type !== 'auto') ? type : detectType(q);
+    if (t === 'imagem') return { type: t, plan: ['Entender o tema: "' + String(prompt).slice(0, 50) + '"', 'Escolher paleta e cena (céu, sol/lua, relevo, mar, cidade, floresta)', 'Desenhar em SVG (vetorial, sem perda de qualidade)', 'Exportar .svg e .png'], files: [{ name: 'imagem.svg', mime: 'image/svg+xml', content: svgArt(prompt) }] };
+    if (t === 'jogo') { const k = pickGame(q, false) || ORDER[Math.floor(seeded(q)() * ORDER.length)]; return { type: t, plan: ['Escolher o jogo: ' + GAMES[k].nome, 'Montar canvas, regras e pontuação', 'Adicionar controles de teclado, mouse e toque', 'Entregar em um único HTML'], files: [{ name: 'jogo-' + k + '.html', mime: 'text/html', content: GAMES[k].html }] }; }
+    if (t === 'app-todo') return { type: t, plan: ['Definir dados (tarefas)', 'Criar interface', 'Salvar no armazenamento local do navegador'], files: [{ name: 'tarefas.html', mime: 'text/html', content: TODO_HTML }] };
+    if (t === 'app-calc') return { type: t, plan: ['Criar teclado', 'Avaliar a expressão com segurança', 'Entregar em um único HTML'], files: [{ name: 'calculadora.html', mime: 'text/html', content: CALC_HTML }] };
+    return { type: 'site', plan: ['Definir seções (início, sobre, serviços, contato)', 'Escrever HTML semântico', 'Estilo responsivo (PC e celular) em style.css', 'Interação em script.js'], files: siteFiles(prompt) };
+  }
+
+  globalThis.JARVES_BASE = { reply, generate, svgArt, games: Object.keys(GAMES), MENU_TAG };
+})();
+
+</script>
+<script>
+/* JARVES AI - backend embutido no navegador (modo "Executor HTML").
+ * Substitui window.fetch para /api/* e /preview/*, guardando os dados em IndexedDB
+ * e falando direto com Ollama ou com uma API compativel com OpenAI.
+ * Mantem os mesmos formatos de resposta do backend Node (CORE/backend). */
+(() => {
+  'use strict';
+  const VERSION = '2.3.0';
+  const DEFAULTS = { ai_provider: 'auto', ollama_base_url: 'http://127.0.0.1:11434', ollama_model: 'qwen3.5:4b' };
+  const ALLOWED = new Set(['ai_provider', 'ollama_base_url', 'ollama_model', 'openai_base_url', 'openai_api_key', 'openai_model',
+    'ai_timeout_ms', 'theme', 'language', 'memory_enabled', 'max_upload_bytes', 'research_enabled', 'ai_quality']);
+  const MAX_UPLOAD = 512 * 1024 * 1024;
+  const MEMORY_MAX = 5000;
+  const realFetch = window.fetch.bind(window);
+
+  // ---------- util ----------
+  const nowIso = () => new Date().toISOString();
+  const newId = () => (crypto.randomUUID ? crypto.randomUUID() : 'id-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
+  const enc = new TextEncoder();
+  const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json' } });
+  const err = (status, message, extra = {}) => json(status, { error: message, ...extra });
+  const trimUrl = (u) => String(u || '').replace(/\/+$/, '');
+  const isAbort = (e) => e && (e.name === 'AbortError' || /abort/i.test(e.message || ''));
+
+  // ---------- armazenamento (IndexedDB, com fallback em memoria) ----------
+  const emptyDb = () => ({ conversations: [], messages: [], memories: [], files: [], fileData: {}, tasks: [], steps: [], settings: {}, diag: null });
+  let db = emptyDb();
+  let persistent = false;
+  let idb = null;
+  let saveTimer = null;
+  const openIdb = () => new Promise((resolve, reject) => {
+    if (!window.indexedDB) return reject(new Error('IndexedDB indisponivel'));
+    const r = indexedDB.open('jarves-executor', 1);
+    r.onupgradeneeded = () => r.result.createObjectStore('kv');
+    r.onsuccess = () => resolve(r.result);
+    r.onerror = () => reject(r.error || new Error('Falha ao abrir IndexedDB'));
+  });
+  const idbOp = (mode, fn) => new Promise((resolve, reject) => {
+    const tx = idb.transaction('kv', mode);
+    const req = fn(tx.objectStore('kv'));
+    tx.oncomplete = () => resolve(req && req.result);
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error || new Error('Transacao abortada'));
+  });
+  const ready = (async () => {
+    try {
+      idb = await openIdb();
+      const saved = await idbOp('readonly', s => s.get('db'));
+      if (saved && typeof saved === 'object') db = { ...emptyDb(), ...saved };
+      persistent = true;
+      if (db.settings.ai_provider === 'mock') { db.settings.ai_provider = 'auto'; save(); } // migra o antigo "modo demonstracao"
+    } catch (e) { persistent = false; console.warn('[JARVES] Dados nao serao salvos entre sessoes:', e.message); }
+  })();
+  function save() {
+    if (!persistent) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => { idbOp('readwrite', s => s.put(db, 'db')).catch(e => console.warn('[JARVES] falha ao salvar:', e.message)); }, 250);
+  }
+  async function flush() { clearTimeout(saveTimer); if (persistent) await idbOp('readwrite', st => st.put(db, 'db')); }
+  window.addEventListener('pagehide', () => { if (persistent && idb) { try { idb.transaction('kv', 'readwrite').objectStore('kv').put(db, 'db'); } catch {} } });
+
+  // ---------- configuracoes ----------
+  const getSetting = (k, d = null) => (db.settings[k] !== undefined && db.settings[k] !== '' ? db.settings[k] : d);
+  function qualityOptions() {
+    const q = getSetting('ai_quality', 'medium');
+    if (q === 'low') return { temperature: 0.5, maxTokens: 2048 };
+    if (q === 'high') return { temperature: 0.7, maxTokens: 16384 };
+    return { temperature: 0.7, maxTokens: 8192 };
+  }
+  function resolveRuntime(providerOverride, modelOverride) {
+    const name = providerOverride || getSetting('ai_provider', DEFAULTS.ai_provider);
+    const timeoutMs = Number(getSetting('ai_timeout_ms', 0)) || 120000;
+    const rt = { name, timeoutMs, baseUrl: '', apiKey: '', preferredModel: null };
+    if (name === 'ollama' || name === 'auto') { rt.baseUrl = trimUrl(getSetting('ollama_base_url', DEFAULTS.ollama_base_url)); rt.preferredModel = getSetting('ollama_model', DEFAULTS.ollama_model); }
+    else if (name === 'openai-compatible') { rt.baseUrl = trimUrl(getSetting('openai_base_url', '')); rt.apiKey = getSetting('openai_api_key', ''); rt.preferredModel = getSetting('openai_model', null); }
+    rt.model = modelOverride || rt.preferredModel || null;
+    return rt;
+  }
+  // Distingue "Ollama desligado" de "ligado, mas o navegador foi bloqueado (CORS)":
+  // uma requisicao no-cors so resolve se algo estiver escutando na porta.
+  let lastProblem = null;
+  async function ollamaProblem(base) {
+    let running = false;
+    try { await realFetch(`${base}/api/tags`, { mode: 'no-cors', signal: AbortSignal.timeout(4000) }); running = true; } catch { running = false; }
+    const p = running ? {
+      kind: 'cors',
+      short: `O Ollama esta ligado em ${base}, mas o navegador foi bloqueado (CORS). Libere com OLLAMA_ORIGINS=* e reinicie o Ollama (veja o aviso no topo).`,
+      long: 'O Ollama esta ligado, mas bloqueou o acesso por este arquivo (CORS). Reinicie o Ollama liberando a origem:\n' +
+        '• Linux: sudo systemctl edit ollama  → adicione  [Service]  Environment="OLLAMA_ORIGINS=*"  → sudo systemctl restart ollama\n' +
+        '• Sem systemd: pare o Ollama e rode   OLLAMA_ORIGINS=* ollama serve\n' +
+        '• Windows: setx OLLAMA_ORIGINS *  e reinicie o Ollama   • Mac: launchctl setenv OLLAMA_ORIGINS "*"  e reinicie',
+    } : {
+      kind: 'down',
+      short: `O Ollama nao esta ligado em ${base}. Rode "ollama serve" (instale em ollama.com) e baixe um modelo; ou use o modo demonstracao.`,
+      long: `Nao ha nada respondendo em ${base}.\n• Instale o Ollama (ollama.com), abra um terminal e rode:  ollama serve\n• Baixe um modelo:  ollama pull qwen3:4b  (depois escolha-o em Configuracoes > Modelos IA)\n• Ou use o botao abaixo para testar a interface sem IA.`,
+    };
+    lastProblem = p; showBanner(p); return p;
+  }
+  function showBanner(p) {
+    let b = document.getElementById('jarvesBanner');
+    if (!p) { if (b) b.remove(); return; }
+    if (!document.body) return;
+    if (!b) {
+      b = document.createElement('div'); b.id = 'jarvesBanner';
+      b.style.cssText = 'position:fixed;bottom:120px;left:50%;transform:translateX(-50%);z-index:9999;max-width:min(760px,94vw);background:#1a1f36;color:#e7ebff;border:1px solid #f0b429;border-radius:12px;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.5);font:14px/1.5 system-ui,sans-serif';
+      document.body.appendChild(b);
+    }
+    b.replaceChildren();
+    const h = document.createElement('b'); h.textContent = p.kind === 'cors' ? 'Ollama bloqueado pelo navegador' : 'Ollama nao encontrado'; h.style.color = '#f0b429';
+    const d = document.createElement('div'); d.textContent = p.long; d.style.cssText = 'white-space:pre-wrap;margin:6px 0 10px;font-size:13px';
+    const row = document.createElement('div'); row.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap';
+    const btn = (t, fn) => { const x = document.createElement('button'); x.type = 'button'; x.className = 'secondary-btn'; x.textContent = t; x.style.cssText = 'padding:6px 10px'; x.addEventListener('click', fn); return x; };
+    row.append(
+      btn('Usar IA base (offline)', async () => { db.settings.ai_provider = 'base'; try { await flush(); } catch {} location.reload(); }),
+      btn('Tentar de novo', () => location.reload()),
+      btn('Fechar', () => b.remove()));
+    b.append(h, d, row);
+  }
+  const fileHint = () => '';
+
+  // timeout de inatividade combinado com o cancelamento do usuario
+  function withTimeout(signal, ms) {
+    const c = new AbortController();
+    let timedOut = false; let timer;
+    const arm = () => { clearTimeout(timer); timer = setTimeout(() => { timedOut = true; c.abort(); }, ms); };
+    arm();
+    if (signal) { if (signal.aborted) c.abort(); else signal.addEventListener('abort', () => c.abort(), { once: true }); }
+    return { signal: c.signal, touch: arm, timedOut: () => timedOut, cleanup: () => clearTimeout(timer) };
+  }
+  const timeoutError = (what, ms) => new Error(`Tempo limite: ${what} nao respondeu em ${Math.round(ms / 1000)}s.`);
+
+  // ---------- provedores ----------
+  async function listModels(rt) {
+    if (rt.name === 'mock') return [{ id: 'mock-model-1', name: 'mock-model-1', provider: 'mock' }];
+    if (rt.name === 'base') return [BASE_ENTRY];
+    if (rt.name === 'auto') {
+      let found = [];
+      try {
+        const res = await realFetch(`${rt.baseUrl}/api/tags`, { signal: AbortSignal.timeout(2500) });
+        if (res.ok) found = ((await res.json()).models || []).map(m => ({ id: m.name, name: m.name, provider: 'ollama', size: m.size, modified: m.modified_at, capabilities: m.details?.families || [] }));
+      } catch { /* Ollama desligado ou bloqueado (CORS): fica so a IA base */ }
+      return [...found, BASE_ENTRY];
+    }
+    if (rt.name === 'ollama') {
+      let res;
+      try { res = await realFetch(`${rt.baseUrl}/api/tags`, { signal: AbortSignal.timeout(10000) }); }
+      catch (e) { throw new Error((await ollamaProblem(rt.baseUrl)).short); }
+      if (!res.ok) throw new Error(`Ollama indisponivel: HTTP ${res.status}`);
+      const data = await res.json();
+      showBanner(null);
+      return (data.models || []).map(m => ({ id: m.name, name: m.name, provider: 'ollama', size: m.size, modified: m.modified_at, capabilities: m.details?.families || [] }));
+    }
+    if (rt.name === 'openai-compatible') {
+      if (!rt.baseUrl) return [];
+      let res;
+      try { res = await realFetch(`${rt.baseUrl}/models`, { headers: oaiHeaders(rt), signal: AbortSignal.timeout(10000) }); }
+      catch (e) { throw new Error(`Provedor externo inacessivel em ${rt.baseUrl}: ${e.message}`); }
+      if (!res.ok) throw new Error(`Provedor externo indisponivel: HTTP ${res.status}`);
+      const data = await res.json();
+      return (data.data || data.models || []).map(m => ({ id: m.id || m.name, name: m.id || m.name, provider: 'openai-compatible' }));
+    }
+    throw new Error('Provedor desconhecido: ' + rt.name);
+  }
+  const BASE_ENTRY = { id: 'jarves-base', name: 'jarves-base', provider: 'base' };
+  const oaiHeaders = (rt) => ({ 'Content-Type': 'application/json', ...(rt.apiKey ? { Authorization: `Bearer ${rt.apiKey}` } : {}) });
+  const cleanMsgs = (messages) => messages.map(m => ({ role: m.role, content: m.content }));
+
+  async function* readLines(res, t) {
+    const reader = res.body.getReader(); const dec = new TextDecoder(); let buf = '';
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      t.touch(); buf += dec.decode(value, { stream: true });
+      const lines = buf.split('\n'); buf = lines.pop() || '';
+      for (const l of lines) yield l;
+    }
+    if (buf.trim()) yield buf;
+  }
+
+  // Gera { delta, model, provider, done }. stream=false devolve tudo em um unico pedaco.
+  async function* generate(rt, messages, options, signal, stream = true) {
+    let model = rt.model;
+    const baseStream = async function* () {
+      const text = window.JARVES_BASE.reply(messages);
+      for (let i = 0; i < text.length; i += 48) {
+        if (signal?.aborted) throw new Error('abortado');
+        await new Promise(r => setTimeout(r, 8));
+        yield { delta: text.slice(i, i + 48), model: 'jarves-base', provider: 'base', done: false };
+      }
+      yield { delta: '', model: 'jarves-base', provider: 'base', done: true };
+    };
+    if (rt.name === 'base') { yield* baseStream(); return; }
+    if (rt.name === 'auto') {
+      // Ollama se estiver ligado (e o modelo existir); senao IA base. Se o Ollama falhar antes de responder, cai para a base.
+      let list = [];
+      if (model !== 'jarves-base') { try { list = (await listModels(rt)).filter(m => m.provider === 'ollama'); } catch { list = []; } }
+      if (!list.length) { yield* baseStream(); return; }
+      if (!list.some(m => m.id === model)) model = list[0].id;
+      let started = false;
+      try {
+        for await (const ch of generate({ ...rt, name: 'ollama', model }, messages, options, signal, stream)) { if (ch.delta) started = true; yield ch; }
+      } catch (e) {
+        if (started || isAbort(e) || signal?.aborted) throw e;
+        yield { delta: '⚠️ O Ollama não respondeu; usando a IA base.\n\n', model: 'jarves-base', provider: 'base', done: false };
+        yield* baseStream();
+      }
+      return;
+    }
+    if (rt.name === 'mock') {
+      if (signal?.aborted) throw new Error('abortado');
+      const last = messages[messages.length - 1]?.content || '';
+      const text = `Resposta simulada do JARVES AI. [eco: ${last.slice(0, 80)}]`;
+      for (const p of (text.match(/.{1,20}/g) || [text])) {
+        await new Promise(r => setTimeout(r, 10));
+        if (signal?.aborted) throw new Error('abortado');
+        yield { delta: p, model: model || 'mock-model-1', provider: 'mock', done: false };
+      }
+      yield { delta: '', model: model || 'mock-model-1', provider: 'mock', done: true };
+      return;
+    }
+    const t = withTimeout(signal, rt.timeoutMs);
+    try {
+      if (rt.name === 'ollama') {
+        if (!model) throw new Error('Nenhum modelo Ollama selecionado. Escolha ou instale um modelo em Configuracoes > Modelos IA.');
+        let res;
+        try {
+          res = await realFetch(`${rt.baseUrl}/api/chat`, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: t.signal,
+            body: JSON.stringify({ model, messages: cleanMsgs(messages), stream, think: false, keep_alive: '30m', options: { temperature: options.temperature ?? 0.6, num_predict: options.maxTokens ?? 8192, num_ctx: options.numCtx ?? 16384, top_p: options.topP ?? 0.85 } }),
+          });
+        } catch (e) { if (t.timedOut()) throw timeoutError('o Ollama', rt.timeoutMs); if (isAbort(e)) throw e; throw new Error((await ollamaProblem(rt.baseUrl)).short); }
+        if (!res.ok) throw new Error(`Ollama erro ${res.status}: ${(await res.text()).slice(0, 300)}`);
+        if (!stream) {
+          const d = await res.json();
+          if (d.error) throw new Error('Ollama: ' + d.error);
+          yield { delta: d.message?.content || '', model: d.model || model, provider: 'ollama', done: true, usage: { prompt: d.prompt_eval_count, completion: d.eval_count } };
+          return;
+        }
+        let finished = false;
+        for await (const line of readLines(res, t)) {
+          const s = line.trim(); if (!s) continue;
+          let o; try { o = JSON.parse(s); } catch { continue; }
+          if (o.error) throw new Error('Ollama: ' + o.error);
+          if (o.message?.content) yield { delta: o.message.content, model: o.model || model, provider: 'ollama', done: false };
+          if (o.done) { finished = true; yield { delta: '', model: o.model || model, provider: 'ollama', done: true }; break; }
+        }
+        if (!finished) yield { delta: '', model, provider: 'ollama', done: true };
+        return;
+      }
+      if (rt.name === 'openai-compatible') {
+        if (!rt.baseUrl) throw new Error('Endpoint do provedor externo nao configurado (Configuracoes > Conexao)');
+        if (!model) throw new Error('Modelo externo nao configurado');
+        let res;
+        try {
+          res = await realFetch(`${rt.baseUrl}/chat/completions`, {
+            method: 'POST', headers: oaiHeaders(rt), signal: t.signal,
+            body: JSON.stringify({ model, stream, messages: cleanMsgs(messages), temperature: options.temperature ?? 0.6, max_tokens: options.maxTokens ?? 512, top_p: options.topP ?? 0.85 }),
+          });
+        } catch (e) { if (t.timedOut()) throw timeoutError('o provedor externo', rt.timeoutMs); if (isAbort(e)) throw e; throw new Error(`Provedor externo inacessivel em ${rt.baseUrl}: ${e.message}`); }
+        if (!res.ok) throw new Error(`Provedor externo erro ${res.status}: ${(await res.text()).slice(0, 300)}`);
+        if (!stream || !(res.headers.get('content-type') || '').includes('text/event-stream')) {
+          const d = await res.json();
+          yield { delta: d.choices?.[0]?.message?.content || '', model: d.model || model, provider: 'openai-compatible', done: true, usage: d.usage };
+          return;
+        }
+        let used = model;
+        for await (const raw of readLines(res, t)) {
+          const line = raw.trim(); if (!line.startsWith('data:')) continue;
+          const payload = line.slice(5).trim();
+          if (payload === '[DONE]') { yield { delta: '', model: used, provider: 'openai-compatible', done: true }; return; }
+          let o; try { o = JSON.parse(payload); } catch { continue; }
+          if (o.error) throw new Error('Provedor externo: ' + (o.error.message || JSON.stringify(o.error)));
+          used = o.model || used;
+          const delta = o.choices?.[0]?.delta?.content;
+          if (delta) yield { delta, model: used, provider: 'openai-compatible', done: false };
+        }
+        yield { delta: '', model: used, provider: 'openai-compatible', done: true };
+        return;
+      }
+      throw new Error('Provedor desconhecido: ' + rt.name);
+    } catch (e) {
+      if (t.timedOut()) throw timeoutError('a resposta do provedor', rt.timeoutMs);
+      throw e;
+    } finally { t.cleanup(); }
+  }
+
+  async function chatOnce({ provider, model, messages, options = {}, signal }) {
+    const rt = resolveRuntime(provider, model);
+    let content = ''; let usage; let outModel = rt.model;
+    for await (const c of generate(rt, messages, { ...qualityOptions(), ...options }, signal, false)) {
+      content += c.delta || ''; usage = c.usage || usage; outModel = c.model || outModel;
+    }
+    return { content, model: outModel, provider: rt.name, usage };
+  }
+
+  // ---------- conversas ----------
+  const getConv = (id) => db.conversations.find(c => c.id === id) || null;
+  function createConversation({ title = 'Nova conversa', model = null, provider = null, agentId = null } = {}) {
+    const now = nowIso();
+    const c = { id: newId(), title, created_at: now, updated_at: now, model, provider, agent_id: agentId, archived: 0 };
+    db.conversations.push(c); save(); return c;
+  }
+  const listMessages = (cid) => db.messages.filter(m => m.conversation_id === cid);
+  function addMessage({ conversationId, role, content, model = null, provider = null, error = null }) {
+    const m = { id: newId(), conversation_id: conversationId, role, content, created_at: nowIso(), model, provider, error };
+    db.messages.push(m);
+    const c = getConv(conversationId); if (c) c.updated_at = m.created_at;
+    save(); return m;
+  }
+  function updateConversation(id, patch) {
+    const c = getConv(id); if (!c) return null;
+    if (patch.title !== undefined) c.title = patch.title;
+    if (patch.model !== undefined) c.model = patch.model;
+    if (patch.provider !== undefined) c.provider = patch.provider;
+    const ag = patch.agent_id !== undefined ? patch.agent_id : patch.agentId;
+    if (ag !== undefined) c.agent_id = ag;
+    if (patch.archived !== undefined) c.archived = patch.archived ? 1 : 0;
+    c.updated_at = nowIso(); save(); return c;
+  }
+  const byUpdatedDesc = (a, b) => (a.updated_at < b.updated_at ? 1 : a.updated_at > b.updated_at ? -1 : 0);
+
+  const active = new Map(); // requestId -> AbortController
+
+  async function handleChat(body, reqSignal) {
+    const { conversationId, message, provider, model, systemPrompt, stream } = body || {};
+    if (!message || typeof message !== 'string') return err(400, 'message obrigatorio');
+    const requestId = (typeof body.requestId === 'string' && body.requestId.trim()) ? body.requestId.trim().slice(0, 160)
+      : `${conversationId || 'new'}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    if (active.has(requestId)) return err(409, 'Ja existe uma requisicao ativa com este identificador', { requestId });
+    let conv = conversationId ? getConv(conversationId) : null;
+    if (conversationId && !conv) return err(404, 'Conversa nao encontrada');
+    if (!conv) conv = createConversation({ title: message.trim().slice(0, 60) || 'Nova conversa', model, provider });
+    const convId = conv.id;
+    if (model || provider) updateConversation(convId, { model: model ?? conv.model, provider: provider ?? conv.provider });
+    const hist = listMessages(convId).filter(m => !m.error).map(m => ({ role: m.role, content: m.content }));
+    addMessage({ conversationId: convId, role: 'user', content: message, model, provider });
+    const messages = [];
+    if (systemPrompt) messages.push({ role: 'system', content: systemPrompt });
+    for (const h of hist) if (h.role && h.content) messages.push(h);
+    messages.push({ role: 'user', content: message });
+
+    const ctrl = new AbortController();
+    active.set(requestId, ctrl);
+    if (reqSignal) { if (reqSignal.aborted) ctrl.abort(); else reqSignal.addEventListener('abort', () => ctrl.abort(), { once: true }); }
+    const rt = resolveRuntime(provider, model);
+    const opts = qualityOptions();
+
+    if (!stream) {
+      try {
+        const r = await chatOnce({ provider, model, messages, signal: ctrl.signal });
+        const saved = addMessage({ conversationId: convId, role: 'assistant', content: r.content, model: r.model, provider: r.provider });
+        return json(200, { requestId, conversationId: convId, message: saved, content: r.content, model: r.model, provider: r.provider, usage: r.usage });
+      } catch (e) {
+        const aborted = isAbort(e);
+        addMessage({ conversationId: convId, role: 'assistant', content: '', model, provider, error: e.message });
+        return err(aborted ? 499 : 502, e.message, { requestId, conversationId: convId, aborted });
+      } finally { active.delete(requestId); }
+    }
+
+    const body$ = new ReadableStream({
+      async start(c) {
+        const send = (o) => { try { c.enqueue(enc.encode(`data: ${JSON.stringify(o)}\n\n`)); } catch {} };
+        let full = ''; let fm = model; let fp = provider;
+        try {
+          for await (const ch of generate(rt, messages, opts, ctrl.signal, true)) {
+            if (ch.delta) { full += ch.delta; send({ type: 'delta', delta: ch.delta }); }
+            fm = ch.model || fm; fp = ch.provider || fp;
+            if (ch.done) send({ type: 'done', model: fm, provider: fp });
+          }
+          const saved = addMessage({ conversationId: convId, role: 'assistant', content: full, model: fm, provider: fp });
+          send({ type: 'saved', messageId: saved.id, conversationId: convId });
+        } catch (e) {
+          const aborted = isAbort(e) || ctrl.signal.aborted;
+          send({ type: 'error', error: e.message, aborted, conversationId: convId });
+          addMessage({ conversationId: convId, role: 'assistant', content: full, model: fm, provider: fp, error: aborted ? 'Interrompido' : e.message });
+        } finally { active.delete(requestId); try { c.close(); } catch {} }
+      },
+      cancel() { ctrl.abort(); },
+    });
+    return new Response(body$, { status: 200, headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache, no-transform' } });
+  }
+
+  // ---------- agentes e tarefas ----------
+  const AGENTS = [
+    ['general', 'Assistente Geral', 'Conversacao, explicacoes e tarefas comuns.', ['chat'], 'Voce e o JARVES AI, um assistente geral em portugues brasileiro. Seja claro, preciso e util. Admita limitacoes.'],
+    ['programmer', 'Programador', 'Analise, escrita e revisao de codigo.', ['code_analyze', 'run_tests'], 'Voce e um agente programador especialista. Analise, escreva, explique e revise codigo. Use blocos de codigo. Identifique bugs e sugira testes.'],
+    ['researcher', 'Pesquisador', 'Pesquisa de informacoes e fontes.', ['research'], 'Voce e um agente pesquisador. Sintetize informacoes, cite fontes quando disponiveis, distinga fatos de hipoteses.'],
+    ['studies', 'Estudos', 'Explicacoes, exercicios e planos de estudo.', [], 'Voce e um agente de estudos. Explique de forma didatica, crie exercicios e planos de estudo.'],
+    ['planner', 'Planejador', 'Divisao de objetivos em etapas.', [], 'Voce e um agente planejador. Divida objetivos em etapas, dependencias e prioridades. Produza planos estruturados.'],
+    ['filemanager', 'Gerenciador de Arquivos', 'Listagem, leitura e analise de arquivos.', ['file_list', 'file_read'], 'Voce e um agente gerenciador de arquivos. Analise arquivos fornecidos, organize e explique conteudo. Nao execute arquivos.'],
+    ['gamedev', 'Desenvolvedor de Jogos', 'Planejamento e codigo de jogos.', [], 'Voce e um agente desenvolvedor de jogos. Planeje estruturas de projeto, mecanicas e codigo de jogos.'],
+    ['reviewer', 'Revisor de Qualidade', 'Analise de erros e testes.', ['code_analyze', 'run_tests'], 'Voce e um revisor de qualidade. Analise erros, sugira testes, identifique regressoes e melhorias.'],
+    ['productivity', 'Produtividade', 'Tarefas, listas e documentos.', [], 'Voce e um agente de produtividade. Organize tarefas, listas e documentos.'],
+    ['coordinator', 'Coordenador', 'Escolha e consolidacao de agentes.', [], 'Voce e o coordenador. Escolha agentes apropriados, distribua subtarefas e consolide resultados. Seja conciso.'],
+  ].map(([id, name, description, allowedTools, systemPrompt]) => ({ id, name, description, allowedTools, systemPrompt, available: true }));
+  const agentMap = Object.fromEntries(AGENTS.map(a => [a.id, a]));
+  function selectAgents(goal) {
+    const g = (goal || '').toLowerCase(); const s = new Set(['general']);
+    if (/c[oó]digo|program|bug|fun[cç][aã]o|api|javascript|python|node/.test(g)) s.add('programmer');
+    if (/pesquis|buscar|fonte|informa[cç][aã]o|not[ií]cia/.test(g)) s.add('researcher');
+    if (/estud|aprender|exerc[ií]cio|aula|prova/.test(g)) s.add('studies');
+    if (/plan|etapa|projeto|cronograma|roadmap/.test(g)) s.add('planner');
+    if (/arquivo|pasta|diret[oó]rio|upload/.test(g)) s.add('filemanager');
+    if (/jogo|game|unity|godot/.test(g)) s.add('gamedev');
+    if (/revis|qualidade|teste|erro/.test(g)) s.add('reviewer');
+    if (/tarefa|lista|organiz|documento|relat[oó]rio/.test(g)) s.add('productivity');
+    if (s.size > 2) s.add('coordinator');
+    return [...s];
+  }
+  async function createPlan(goal, ctx = {}) {
+    let steps = [];
+    try {
+      const res = await chatOnce({ provider: ctx.provider, model: ctx.model, options: { temperature: 0.3, maxTokens: 1024 },
+        messages: [{ role: 'user', content: `Divida o objetivo em etapas executaveis. Responda APENAS em JSON valido no formato:\n{"steps":[{"title":"...","agent":"id do agente","dependsOn":[]}]}. Objetivo: ${goal}` }] });
+      const m = res.content.match(/\{[\s\S]*\}/);
+      if (m) { const p = JSON.parse(m[0]); if (Array.isArray(p.steps)) steps = p.steps; }
+    } catch { /* usa o plano padrao */ }
+    if (!steps.length) steps = selectAgents(goal).map((id, i) => ({ title: `Etapa ${i + 1}: ${agentMap[id]?.name || id}`, agent: id, dependsOn: i > 0 ? [i - 1] : [] }));
+    return steps.slice(0, 8).map((s, i) => ({
+      title: String(s.title || `Etapa ${i + 1}`),
+      agent: agentMap[s.agent] ? s.agent : (selectAgents(goal)[0] || 'general'),
+      dependsOn: Array.isArray(s.dependsOn) ? s.dependsOn : [],
+    }));
+  }
+  const taskView = (t) => t && ({ ...t, steps: db.steps.filter(s => s.task_id === t.id).sort((a, b) => a.idx - b.idx) });
+  function createTask({ goal, conversationId = null, plan = [] }) {
+    const now = nowIso();
+    const t = { id: newId(), conversation_id: conversationId, goal, status: 'pending', plan, result: null, error: null, created_at: now, updated_at: now };
+    db.tasks.push(t);
+    plan.forEach((s, i) => db.steps.push({ id: newId(), task_id: t.id, idx: i, title: s.title, status: 'pending', agent_id: s.agent, input: null, output: null, error: null, started_at: null, finished_at: null }));
+    save(); return taskView(t);
+  }
+  const running = new Map();
+  const clip = (s, n) => { const t = String(s || ''); return t.length > n ? t.slice(0, n) + ' [...]' : t; };
+  async function runTask(taskId, ctx = {}) {
+    const task = db.tasks.find(t => t.id === taskId);
+    if (!task) { const e = new Error('Tarefa nao encontrada'); e.status = 404; throw e; }
+    if (running.has(taskId)) { const e = new Error('Tarefa ja esta em execucao'); e.status = 409; throw e; }
+    const ctrl = new AbortController(); running.set(taskId, ctrl);
+    task.status = 'running'; task.updated_at = nowIso(); save();
+    const steps = db.steps.filter(s => s.task_id === taskId).sort((a, b) => a.idx - b.idx);
+    const results = []; const cancelled = () => ctrl.signal.aborted || task.status === 'cancelled';
+    try {
+      let executed = 0;
+      for (const step of steps) {
+        if (cancelled() || executed >= 10) break;
+        step.status = 'running'; step.started_at = nowIso();
+        const agent = agentMap[step.agent_id] || agentMap.general;
+        const previous = results.filter(r => !r.error).map(r => `### ${r.step}\n${clip(r.output, 1500)}`).join('\n\n');
+        const prompt = `Objetivo geral: ${task.goal}\n\nEtapa ${executed + 1} de ${steps.length}: ${step.title}` +
+          (previous ? `\n\nResultados das etapas anteriores:\n${previous}` : '') + '\n\nExecute apenas esta etapa e responda de forma objetiva.';
+        try {
+          const r = await chatOnce({ provider: ctx.provider, model: ctx.model, signal: ctrl.signal, messages: [{ role: 'system', content: agent.systemPrompt }, { role: 'user', content: prompt }] });
+          step.status = 'done'; step.output = (r.content || '').slice(0, 4000); step.error = null;
+          results.push({ step: step.title, output: r.content });
+        } catch (e) {
+          const c = cancelled();
+          step.status = c ? 'cancelled' : 'failed'; step.output = null; step.error = c ? 'Cancelado' : e.message;
+          if (!c) results.push({ step: step.title, error: e.message });
+        }
+        step.finished_at = nowIso(); executed++; save();
+      }
+      const c = cancelled();
+      task.result = results.map(r => `## ${r.step}\n${r.error ? 'ERRO: ' + r.error : (r.output || '')}`).join('\n\n');
+      task.status = c ? 'cancelled' : (results.every(r => !r.error) ? 'done' : 'partial');
+      if (c) steps.forEach(s => { if (s.status === 'pending' || s.status === 'running') s.status = 'cancelled'; });
+      task.updated_at = nowIso(); save();
+    } finally { running.delete(taskId); }
+    return taskView(task);
+  }
+  function cancelTask(id) {
+    const t = db.tasks.find(x => x.id === id); if (!t) return null;
+    t.status = 'cancelled'; t.updated_at = nowIso();
+    db.steps.forEach(s => { if (s.task_id === id && ['pending', 'running', 'awaiting'].includes(s.status)) s.status = 'cancelled'; });
+    running.get(id)?.abort(); save(); return taskView(t);
+  }
+
+  // ---------- arquivos ----------
+  const classify = (mime, name) => {
+    const n = (name || '').toLowerCase();
+    if (mime?.startsWith('image/')) return 'image';
+    if (/\.(js|mjs|ts)$/.test(n)) return 'code-js';
+    if (n.endsWith('.py')) return 'code-py';
+    if (n.endsWith('.json')) return 'json';
+    if (/\.(md|txt)$/.test(n)) return 'text';
+    if (/\.(html|css)$/.test(n)) return 'web';
+    return 'other';
+  };
+  const b64ToBytes = (b64) => { const bin = atob(b64.replace(/\s/g, '')); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u; };
+  function analyzeCode(code) {
+    const issues = [];
+    if (!code) return { issues, summary: 'Codigo vazio' };
+    const lines = code.split(/\n/);
+    if (/\beval\s*\(/.test(code)) issues.push({ severity: 'high', message: 'Uso de eval detectado' });
+    if (/password\s*=\s*['"][^'"]+['"]/.test(code)) issues.push({ severity: 'high', message: 'Possivel segredo hardcoded' });
+    if (/TODO|FIXME/.test(code)) issues.push({ severity: 'low', message: 'TODO/FIXME encontrado' });
+    if (lines.length > 1000) issues.push({ severity: 'medium', message: 'Arquivo muito longo, considere modularizar' });
+    const open = (code.match(/[{[(]/g) || []).length; const close = (code.match(/[}\])]/g) || []).length;
+    if (Math.abs(open - close) > 5) issues.push({ severity: 'medium', message: 'Possivel desbalanceamento de parenteses/chaves' });
+    return { issues, lineCount: lines.length, summary: issues.length ? `${issues.length} problema(s) potencial(is)` : 'Nenhum problema obvio detectado' };
+  }
+
+  // ---------- diagnostico ----------
+  async function runDiagnostics() {
+    const errors = []; const checks = [];
+    const mk = (p) => ({ id: 'ERR-' + Math.random().toString(36).slice(2, 8).toUpperCase(), line: null, status: 'PENDENTE', testResult: 'NAO_TESTADO', description: '', probableCause: '', recommendedFix: '', ...p });
+    checks.push({ name: 'database', ok: persistent, mode: persistent ? 'IndexedDB' : 'memoria' });
+    if (!persistent) errors.push(mk({ name: 'Dados nao serao salvos', file: 'navegador', category: 'BANCO_DE_DADOS', severity: 'ALTO', description: 'IndexedDB indisponivel (janela privada ou bloqueio do navegador).', probableCause: 'Armazenamento bloqueado.', recommendedFix: 'Abra em uma janela normal e permita armazenamento do site.' }));
+    try {
+      const rt = resolveRuntime(null, null); const models = await listModels(rt);
+      if (!models.length) throw new Error('Nenhum modelo disponivel');
+      checks.push({ name: 'provider', ok: true, provider: rt.name, models: models.length });
+    } catch (e) {
+      checks.push({ name: 'provider', ok: false, error: e.message });
+      errors.push(mk({ name: 'Provedor de IA indisponivel', file: 'configuracoes', category: 'IA', severity: 'ALTO', description: 'Nao foi possivel listar modelos do provedor configurado.', probableCause: e.message, recommendedFix: 'Inicie o Ollama (ollama serve), baixe um modelo ou configure o provedor em Configuracoes.' }));
+    }
+    try {
+      const est = navigator.storage?.estimate ? await navigator.storage.estimate() : null;
+      checks.push({ name: 'storage', ok: true, usageMB: est ? +(est.usage / 1048576).toFixed(2) : null, quotaMB: est ? Math.round(est.quota / 1048576) : null });
+    } catch (e) { checks.push({ name: 'storage', ok: false, error: e.message }); }
+    checks.push({ name: 'tests', ok: true, skipped: true, note: 'Suite de testes so existe na versao com servidor (npm test).' });
+    const c = (s) => errors.filter(e => e.severity === s).length;
+    const report = { id: 'DIAG-' + Date.now(), timestamp: nowIso(), mode: 'executor-html',
+      summary: { totalErrors: errors.length, critical: c('CRITICO'), high: c('ALTO'), medium: c('MEDIO'), low: c('BAIXO'), info: c('INFORMATIVO'), testsPass: 0, testsFail: 0 },
+      checks, errors, resolvedBugs: [], recommendations: errors.map(e => e.recommendedFix).filter(Boolean) };
+    db.diag = report; save(); return report;
+  }
+
+  // ---------- roteador ----------
+  const settingsMasked = () => { const all = { ...db.settings }; if (all.openai_api_key) all.openai_api_key = '***' + String(all.openai_api_key).slice(-4); return all; };
+  const normMem = (m) => m;
+  async function route(method, path, q, body, signal) {
+    let m;
+    if (path === '/api/health' && method === 'GET') return json(200, { status: 'ok', db: persistent, time: nowIso(), version: VERSION, mode: 'executor-html' });
+
+    // conversas
+    if (path === '/api/conversations') {
+      if (method === 'GET') {
+        const s = (q.get('search') || '').toLowerCase(); const limit = Number(q.get('limit')) || 100; const off = Number(q.get('offset')) || 0;
+        let list = db.conversations.filter(c => !c.archived);
+        if (s) list = list.filter(c => c.title.toLowerCase().includes(s) || db.messages.some(x => x.conversation_id === c.id && String(x.content).toLowerCase().includes(s)));
+        return json(200, list.slice().sort(byUpdatedDesc).slice(off, off + limit));
+      }
+      if (method === 'POST') { const b = body || {}; return json(201, createConversation({ title: b.title || 'Nova conversa', model: b.model, provider: b.provider, agentId: b.agentId })); }
+    }
+    if ((m = path.match(/^\/api\/conversations\/([^/]+)(\/messages)?$/))) {
+      const id = decodeURIComponent(m[1]); const c = getConv(id);
+      if (!c) return err(404, 'Conversa nao encontrada');
+      if (!m[2]) {
+        if (method === 'GET') return json(200, { ...c, messages: listMessages(id) });
+        if (method === 'PATCH') return json(200, updateConversation(id, body || {}));
+        if (method === 'DELETE') { db.conversations = db.conversations.filter(x => x.id !== id); db.messages = db.messages.filter(x => x.conversation_id !== id); save(); return json(200, { ok: true }); }
+      } else {
+        if (method === 'GET') return json(200, listMessages(id));
+        if (method === 'DELETE') { db.messages = db.messages.filter(x => x.conversation_id !== id); save(); return json(200, { ok: true }); }
+        if (method === 'POST') {
+          const { role, content, model, provider, error } = body || {};
+          if (!role || content === undefined) return err(400, 'role e content obrigatorios');
+          if (!['user', 'assistant', 'system'].includes(role)) return err(400, 'role invalido');
+          return json(201, addMessage({ conversationId: id, role, content, model, provider, error }));
+        }
+      }
+    }
+
+    // chat
+    if (path === '/api/chat' && method === 'POST') return handleChat(body, signal);
+    if (path === '/api/chat/cancel' && method === 'POST') {
+      const rid = body?.requestId; if (!rid) return err(400, 'requestId obrigatorio');
+      const c = active.get(rid); if (!c) return err(404, 'Requisicao nao encontrada ou ja finalizada');
+      c.abort(); return json(200, { ok: true });
+    }
+    if (path === '/api/chat/active' && method === 'GET') return json(200, { count: active.size, ids: [...active.keys()] });
+
+    // modelos
+    if (path === '/api/models' && method === 'GET') {
+      const rt = resolveRuntime(q.get('provider') || null, null);
+      try { return json(200, { provider: rt.name, models: await listModels(rt), selected: rt.preferredModel || null, error: null }); }
+      catch (e) { return json(200, { provider: rt.name, models: [], selected: rt.preferredModel || null, error: e.message }); }
+    }
+    if (path === '/api/models/check' && method === 'GET') {
+      const provider = q.get('provider'); const model = q.get('model');
+      if (!provider || !model) return err(400, 'provider e model obrigatorios');
+      try { const ms = await listModels(resolveRuntime(provider, null)); return json(200, { provider, model, available: ms.some(x => x.id === model) }); }
+      catch (e) { return json(200, { provider, model, available: false, error: e.message }); }
+    }
+    if (path === '/api/models/pull' && method === 'POST') {
+      const model = body?.model;
+      if (typeof model !== 'string' || !/^[a-zA-Z0-9._:/-]{1,160}$/.test(model)) return err(400, 'Nome de modelo inválido.');
+      const base = trimUrl(getSetting('ollama_base_url', DEFAULTS.ollama_base_url));
+      try {
+        const res = await realFetch(`${base}/api/pull`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model, stream: false }), signal: AbortSignal.timeout(30 * 60 * 1000) });
+        if (!res.ok) return err(res.status, `Ollama não conseguiu baixar o modelo: ${(await res.text()).slice(0, 240)}`);
+        const r = await res.json().catch(() => ({}));
+        return json(200, { ok: true, model, status: r.status || 'sucesso' });
+      } catch (e) { return err(502, e.name === 'TimeoutError' ? 'Tempo limite ao baixar o modelo.' : (await ollamaProblem(base)).short); }
+    }
+
+    // configuracoes
+    if (path === '/api/settings' && method === 'GET') return json(200, { settings: settingsMasked(), defaults: { ai_provider: DEFAULTS.ai_provider, ollama_base_url: DEFAULTS.ollama_base_url, ollama_model: DEFAULTS.ollama_model } });
+    if ((m = path.match(/^\/api\/settings\/([^/]+)$/))) {
+      const key = decodeURIComponent(m[1]);
+      if (method === 'GET') {
+        if (!ALLOWED.has(key)) return err(404, 'Configuracao nao encontrada');
+        const v = getSetting(key, null); return json(200, { key, value: key === 'openai_api_key' && v ? '***' + String(v).slice(-4) : v });
+      }
+      if (method === 'DELETE') { if (!ALLOWED.has(key)) return err(400, 'Chave nao permitida'); delete db.settings[key]; save(); return json(200, { ok: true }); }
+      if (method === 'PUT') {
+        if (!ALLOWED.has(key)) return err(400, 'Chave nao permitida');
+        const value = body?.value;
+        if (value === undefined) return err(400, 'value obrigatorio');
+        if (!['string', 'number', 'boolean'].includes(typeof value)) return err(400, 'value deve ser texto, numero ou booleano');
+        if (value === '') { delete db.settings[key]; save(); return json(200, { ok: true, key, value: null, cleared: true }); }
+        if (key === 'openai_api_key' && typeof value === 'string' && /^\*{3,}/.test(value)) return json(200, { ok: true, key, preserved: true });
+        if (['ollama_base_url', 'openai_base_url'].includes(key)) { try { const u = new URL(String(value)); if (!['http:', 'https:'].includes(u.protocol)) throw 0; } catch { return err(400, 'URL invalida: use http:// ou https://'); } }
+        if (key === 'openai_api_key' && (typeof value !== 'string' || value.length > 4096)) return err(400, 'API key invalida');
+        if (key === 'ai_timeout_ms' && Number(value) > 600000) return err(400, 'timeout maximo: 600000 ms');
+        if (key === 'ai_timeout_ms' && (isNaN(Number(value)) || Number(value) < 1000)) return err(400, 'timeout invalido');
+        if (key === 'ai_provider' && !['auto', 'ollama', 'openai-compatible', 'base', 'mock'].includes(value)) return err(400, 'provedor invalido');
+        if (key === 'ai_quality' && !['low', 'medium', 'high'].includes(value)) return err(400, 'qualidade invalida');
+        db.settings[key] = value; save();
+        return json(200, { ok: true, key, value: key === 'openai_api_key' ? '***' + String(value).slice(-4) : value });
+      }
+    }
+
+    // memoria
+    if (path === '/api/memory') {
+      if (method === 'GET') {
+        let l = db.memories.slice(); const kind = q.get('kind'); const en = q.get('enabled'); const sq = (q.get('q') || '').toLowerCase();
+        if (kind) l = l.filter(x => x.kind === kind);
+        if (en !== null) l = l.filter(x => x.enabled === (en === 'true'));
+        if (sq) l = l.filter(x => [x.content, x.subject, x.tags].some(v => String(v || '').toLowerCase().includes(sq)));
+        const limit = Number(q.get('limit')) || 200; const off = Number(q.get('offset')) || 0;
+        return json(200, l.sort(byUpdatedDesc).slice(off, off + limit));
+      }
+      if (method === 'POST') {
+        const { kind, subject, content, tags, enabled } = body || {};
+        if (!content || typeof content !== 'string' || !content.trim()) return err(400, 'content obrigatorio');
+        if (db.memories.length >= MEMORY_MAX) return err(400, 'Limite de memoria atingido');
+        const now = nowIso();
+        const mem = { id: newId(), kind: kind || 'note', subject: subject ?? null, content, tags: Array.isArray(tags) ? tags.join(',') : (tags ?? null), enabled: enabled === undefined ? true : !!enabled, created_at: now, updated_at: now };
+        db.memories.push(mem); save(); return json(201, normMem(mem));
+      }
+    }
+    if (path === '/api/memory/search' && method === 'GET') {
+      const sq = (q.get('q') || '').trim().toLowerCase(); if (!sq) return json(200, []);
+      return json(200, db.memories.filter(x => [x.content, x.subject, x.tags].some(v => String(v || '').toLowerCase().includes(sq))).sort(byUpdatedDesc).slice(0, 50));
+    }
+    if (path === '/api/memory/status' && method === 'GET') return json(200, { enabled: true });
+    if (path === '/api/memory/clear' && method === 'POST') { db.memories = []; save(); return json(200, { ok: true }); }
+    if ((m = path.match(/^\/api\/memory\/([^/]+)$/))) {
+      const id = decodeURIComponent(m[1]); const mem = db.memories.find(x => x.id === id);
+      if (!mem) return err(404, 'Memoria nao encontrada');
+      if (method === 'GET') return json(200, mem);
+      if (method === 'DELETE') { db.memories = db.memories.filter(x => x.id !== id); save(); return json(200, { ok: true }); }
+      if (method === 'PATCH') {
+        const p = { ...(body || {}) }; if (Array.isArray(p.tags)) p.tags = p.tags.join(',');
+        if (p.content !== undefined && (typeof p.content !== 'string' || !p.content.trim())) return err(400, 'content invalido');
+        for (const k of ['kind', 'subject', 'content', 'tags']) if (p[k] !== undefined) mem[k] = p[k];
+        if (p.enabled !== undefined) mem.enabled = !!p.enabled;
+        mem.updated_at = nowIso(); save(); return json(200, mem);
+      }
+    }
+
+    // arquivos
+    if (path === '/api/files' && method === 'GET') return json(200, { files: db.files.slice().sort((a, b) => (a.created_at < b.created_at ? 1 : -1)).slice(0, 200), dir: [] });
+    if (path === '/api/files/upload' && method === 'POST') {
+      const { name, mime, data } = body || {};
+      if (!name || !data) return err(400, 'name e data (base64) obrigatorios');
+      if (typeof name !== 'string' || typeof data !== 'string') return err(400, 'name e data devem ser texto');
+      if (Math.floor(data.length * 3 / 4) > MAX_UPLOAD + 3) return err(413, `Arquivo excede limite de ${MAX_UPLOAD} bytes`);
+      if (!/^[A-Za-z0-9+/\s]*={0,2}\s*$/.test(data)) return err(400, 'data nao e base64 valido');
+      if (name === '.' || name === '..' || /[\\/\0]/.test(name) || name.length > 255) return err(400, 'Nome de arquivo invalido');
+      const id = newId(); const size = b64ToBytes(data).length;
+      const rec = { id, name, path: id, size, mime: mime || null, kind: classify(mime, name), created_at: nowIso(), metadata: { originalName: name } };
+      db.files.push(rec); db.fileData[id] = data.replace(/\s/g, ''); save(); return json(201, rec);
+    }
+    if (path === '/api/files/analyze' && method === 'POST') return json(200, analyzeCode(body?.code || ''));
+    if ((m = path.match(/^\/api\/files\/([^/]+)(\/content)?$/))) {
+      const id = decodeURIComponent(m[1]); const f = db.files.find(x => x.id === id);
+      if (m[2]) {
+        if (!f) return err(400, 'Arquivo nao encontrado');
+        if (f.size > 200000) return err(400, 'Arquivo muito grande para leitura');
+        const bytes = b64ToBytes(db.fileData[id] || '');
+        if (bytes.includes(0)) return err(400, 'Arquivo binario: nao e possivel exibir como texto');
+        return json(200, { id: f.id, name: f.name, size: f.size, mime: f.mime, kind: f.kind, content: new TextDecoder().decode(bytes) });
+      }
+      if (!f) return err(404, 'Arquivo nao encontrado');
+      if (method === 'GET') return json(200, f);
+      if (method === 'DELETE') { db.files = db.files.filter(x => x.id !== id); delete db.fileData[id]; save(); return json(200, { ok: true }); }
+    }
+
+    // tarefas
+    if (path === '/api/tasks/agents' && method === 'GET') return json(200, AGENTS.map(({ id, name, description, available, allowedTools }) => ({ id, name, description, available, allowedTools })));
+    if (path === '/api/tasks/plan' && method === 'POST') {
+      if (!body?.goal) return err(400, 'goal obrigatorio');
+      return json(200, { goal: body.goal, steps: await createPlan(body.goal, body) });
+    }
+    if (path === '/api/tasks') {
+      if (method === 'GET') return json(200, db.tasks.slice().sort((a, b) => (a.created_at < b.created_at ? 1 : -1)).slice(0, Number(q.get('limit')) || 50));
+      if (method === 'POST') {
+        const { goal, conversationId, provider, model, autoRun, agentId } = body || {};
+        if (!goal || typeof goal !== 'string') return err(400, 'goal obrigatorio');
+        let steps;
+        if (agentId) { if (!agentMap[agentId]) return err(400, 'agentId desconhecido'); steps = [{ title: goal.slice(0, 200), agent: agentId, dependsOn: [] }]; }
+        else steps = await createPlan(goal, { provider, model });
+        const task = createTask({ goal, conversationId, plan: steps });
+        if (autoRun) runTask(task.id, { provider, model }).catch(e => console.error('[task]', e.message));
+        return json(201, task);
+      }
+    }
+    if ((m = path.match(/^\/api\/tasks\/([^/]+)(\/run|\/cancel)?$/))) {
+      const id = decodeURIComponent(m[1]); const t = db.tasks.find(x => x.id === id);
+      if (!t) return err(404, 'Tarefa nao encontrada');
+      if (!m[2] && method === 'GET') return json(200, taskView(t));
+      if (m[2] === '/run' && method === 'POST') {
+        try { return json(200, await runTask(id, { provider: body?.provider, model: body?.model })); }
+        catch (e) { return err(e.status || 500, e.message); }
+      }
+      if (m[2] === '/cancel' && method === 'POST') return json(200, cancelTask(id));
+    }
+
+    // pesquisa / diagnostico / admin
+    if (path === '/api/research' && method === 'POST') {
+      if (!body?.query) return err(400, 'query obrigatoria');
+      return err(403, 'Pesquisa web indisponivel no Executor HTML (o navegador bloqueia buscas externas). Use a versao com servidor e RESEARCH_ENABLED=true.');
+    }
+    if (path === '/api/diagnostics/run' && method === 'POST') return json(200, await runDiagnostics());
+    if (path === '/api/diagnostics/last' && method === 'GET') return db.diag ? json(200, db.diag) : err(404, 'Nenhum diagnostico executado');
+    if (path === '/api/diagnostics/export' && method === 'GET') {
+      if (!db.diag) return err(404, 'Nenhum diagnostico');
+      return new Response(JSON.stringify(db.diag, null, 2), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }
+    if (path.startsWith('/api/diagnostics/')) return err(403, 'Operacao de administrador indisponivel no Executor HTML.');
+
+    return err(404, 'Rota nao encontrada');
+  }
+
+  // ---------- intercepta fetch ----------
+  window.fetch = async function (input, init = {}) {
+    const raw = typeof input === 'string' ? input : (input instanceof URL ? input.href : (input && input.url) || '');
+    let pathname = null;
+    if (raw.startsWith('/api/')) pathname = raw;
+    else { try { const u = new URL(raw); if (/^\/api\//.test(u.pathname) && (u.origin === location.origin || u.protocol === 'file:')) pathname = u.pathname + u.search; } catch {} }
+    if (pathname === null) return realFetch(input, init);
+    const url = new URL(pathname, 'http://jarves.local');
+    let method = (init.method || (typeof input === 'object' && input.method) || 'GET').toUpperCase();
+    let rawBody = init.body; const signal = init.signal || (typeof input === 'object' ? input.signal : undefined);
+    if (rawBody === undefined && typeof input === 'object' && input.clone && method !== 'GET') rawBody = await input.clone().text();
+    await ready;
+    let body = null;
+    if (typeof rawBody === 'string' && rawBody) { try { body = JSON.parse(rawBody); } catch { return err(400, 'JSON invalido'); } }
+    try { return await route(method, url.pathname.replace(/\/+$/, '') || '/', url.searchParams, body, signal); }
+    catch (e) { return err(500, e.message || 'Erro interno'); }
+  };
+
+  // ---------- pre-visualizacao de arquivo (substitui /preview/:id) ----------
+  const PREVIEW = new Set(['text/html', 'text/plain', 'text/css', 'text/markdown', 'application/json', 'image/png', 'image/jpeg', 'image/gif', 'image/webp']);
+  const realOpen = window.open.bind(window);
+  window.open = function (url, target, features) {
+    const m = typeof url === 'string' && url.match(/^\/preview\/([^/?#]+)/);
+    if (!m) return realOpen(url, target, features);
+    const w = realOpen('about:blank', target || '_blank');
+    ready.then(() => {
+      const f = db.files.find(x => x.id === decodeURIComponent(m[1]));
+      if (!f) { if (w) w.document.body.textContent = 'Arquivo nao encontrado'; return; }
+      const mime = String(f.mime || '').split(';')[0].trim().toLowerCase();
+      const bytes = b64ToBytes(db.fileData[f.id] || '');
+      let blob;
+      if (mime === 'text/html') {
+        // HTML enviado roda em iframe isolado (sem allow-same-origin): nao alcanca os dados do JARVES.
+        const html = new TextDecoder().decode(bytes).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+        blob = new Blob([`<!doctype html><meta charset="utf-8"><title>${f.name.replace(/[<&]/g, '')}</title><style>html,body,iframe{margin:0;width:100%;height:100%;border:0}</style><iframe sandbox="allow-scripts" srcdoc="${html}"></iframe>`], { type: 'text/html' });
+      } else blob = new Blob([bytes], { type: PREVIEW.has(mime) ? mime : 'text/plain' });
+      const u = URL.createObjectURL(blob);
+      if (w) w.location.href = u; else realOpen(u, '_blank');
+      setTimeout(() => URL.revokeObjectURL(u), 120000);
+    });
+    return w;
+  };
+
+  // ---------- links de diagnostico (/api/diagnostics/export, /diagnostico) ----------
+  function diagText(r, fmt) {
+    if (fmt === 'json') return [JSON.stringify(r, null, 2), 'application/json'];
+    const esc = (v) => String(v ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    const lines = [`JARVES AI - RELATORIO DE DIAGNOSTICO (${r.timestamp})`, '', ...Object.entries(r.summary).map(([k, v]) => `${k}: ${v}`), '', ...r.errors.map(e => `[${e.severity}] ${e.name} - ${e.probableCause}`)];
+    if (fmt === 'txt') return [lines.join('\n'), 'text/plain'];
+    return [`<!doctype html><meta charset="utf-8"><title>JARVES AI Diagnostico</title><body style="font-family:sans-serif;padding:20px"><pre>${esc(lines.join('\n'))}</pre></body>`, 'text/html'];
+  }
+  document.addEventListener('click', (ev) => {
+    const a = ev.target.closest && ev.target.closest('a[href]'); if (!a) return;
+    const href = a.getAttribute('href');
+    const m = href.match(/^\/api\/diagnostics\/export\?format=(\w+)/);
+    if (!m && href !== '/diagnostico') return;
+    ev.preventDefault();
+    if (!db.diag) { alert('Nenhum diagnostico executado. Rode um em Diagnostico.'); return; }
+    const fmt = m ? m[1].toLowerCase() : 'html'; const [text, type] = diagText(db.diag, fmt);
+    const u = URL.createObjectURL(new Blob([text], { type }));
+    if (m) { const d = document.createElement('a'); d.href = u; d.download = 'diagnostico.' + fmt; d.click(); } else window.open(u, '_blank');
+    setTimeout(() => URL.revokeObjectURL(u), 60000);
+  });
+
+  // ---------- backup dos dados ----------
+  window.jarvesExecutor = {
+    mode: 'executor-html', version: VERSION, ready,
+    exportData() { const blob = new Blob([JSON.stringify({ app: 'jarves-executor', version: VERSION, exportedAt: nowIso(), db }, null, 1)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `jarves-backup-${new Date().toISOString().slice(0, 10)}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000); },
+    async importData(file) { const d = JSON.parse(await file.text()); if (d.app !== 'jarves-executor' || !d.db) throw new Error('Arquivo de backup invalido'); db = { ...emptyDb(), ...d.db }; await flush(); },
+    async reset() { db = emptyDb(); save(); },
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    const bar = document.querySelector('.sidebar-bottom'); if (!bar) return;
+    const mk = (label, fn) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'secondary-btn'; b.textContent = label; b.style.cssText = 'margin-top:6px;padding:4px 8px;font-size:12px;flex:1'; b.addEventListener('click', fn); return b; };
+    const input = document.createElement('input'); input.type = 'file'; input.accept = 'application/json'; input.hidden = true;
+    input.addEventListener('change', async () => { try { await window.jarvesExecutor.importData(input.files[0]); location.reload(); } catch (e) { alert(e.message); } });
+    const row = document.createElement('div'); row.style.cssText = 'display:flex;gap:6px;flex-basis:100%;width:100%';
+    row.append(mk('Backup', () => window.jarvesExecutor.exportData()), mk('Restaurar', () => input.click()), input);
+    bar.style.flexWrap = 'wrap'; bar.append(row);
+  });
+})();
+
+</script>
+<script>
+const API = '';
+function networkHint(error) {
+  if (error?.name === 'AbortError') return 'Solicitação cancelada.';
+  if (error && (error.name === 'TypeError' || /failed to fetch|networkerror|load failed|fetch failed/i.test(error.message || ''))) {
+    if (typeof location !== 'undefined' && location.protocol === 'file:') return 'O JARVES foi aberto como arquivo. Inicie o servidor pelo inicializador da pasta PC e abra http://localhost:3000.';
+    const origin = typeof location !== 'undefined' ? location.origin : 'o endereço do servidor';
+    return `Não foi possível acessar ${origin}. Verifique se o JARVES está iniciado, se o endereço está correto e se firewall/rede permitem a conexão.`;
+  }
+  return error?.message || 'Falha inesperada na comunicação com o servidor.';
+}
+async function request(path, opts = {}) {
+  let res;
+  try {
+    res = await fetch(API + path, {
+      ...opts,
+      headers: { ...(opts.body !== undefined ? { 'Content-Type': 'application/json' } : {}), ...(opts.headers || {}) },
+      body: opts.body !== undefined ? (typeof opts.body === 'string' ? opts.body : JSON.stringify(opts.body)) : undefined,
+      cache: opts.cache || 'no-store',
+    });
+  } catch (error) { throw new Error(networkHint(error), { cause: error }); }
+  let raw;
+  try { raw = await res.text(); } catch (error) { throw new Error(networkHint(error), { cause: error }); }
+  let data = null;
+  try { data = raw ? JSON.parse(raw) : null; } catch { data = raw; }
+  if (!res.ok) {
+    const message = data && typeof data === 'object' && data.error ? data.error : `Erro HTTP ${res.status}${res.statusText ? `: ${res.statusText}` : ''}`;
+    throw new Error(message);
+  }
+  return data;
+}
+const idPath = (id) => encodeURIComponent(String(id));
+const api = {
+  health: () => request('/api/health'),
+  listConversations: (search) => request('/api/conversations' + (search ? '?search=' + encodeURIComponent(search) : '')),
+  createConversation: (payload) => request('/api/conversations', { method: 'POST', body: payload || {} }),
+  getConversation: (id) => request('/api/conversations/' + idPath(id)),
+  updateConversation: (id, payload) => request('/api/conversations/' + idPath(id), { method: 'PATCH', body: payload }),
+  deleteConversation: (id) => request('/api/conversations/' + idPath(id), { method: 'DELETE' }),
+  sendMessage: (payload) => request('/api/chat', { method: 'POST', body: payload }),
+  cancel: (requestId) => request('/api/chat/cancel', { method: 'POST', body: { requestId } }),
+  listModels: (provider) => request('/api/models' + (provider ? '?provider=' + encodeURIComponent(provider) : '')),
+  checkModel: (provider, model) => request('/api/models/check?provider=' + encodeURIComponent(provider) + '&model=' + encodeURIComponent(model)),
+  pullModel: (model) => request('/api/models/pull', { method: 'POST', body: { model } }),
+  getSettings: () => request('/api/settings'),
+  setSetting: (key, value) => request('/api/settings/' + encodeURIComponent(key), { method: 'PUT', body: { value } }),
+  deleteSetting: (key) => request('/api/settings/' + encodeURIComponent(key), { method: 'DELETE' }),
+  listMemory: (q) => request('/api/memory?limit=200' + (q ? '&q=' + encodeURIComponent(q) : '')),
+  searchMemory: (q) => request('/api/memory/search?q=' + encodeURIComponent(q)),
+  createMemory: (payload) => request('/api/memory', { method: 'POST', body: payload }),
+  updateMemory: (id, payload) => request('/api/memory/' + idPath(id), { method: 'PATCH', body: payload }),
+  deleteMemory: (id) => request('/api/memory/' + idPath(id), { method: 'DELETE' }),
+  listFiles: () => request('/api/files'),
+  uploadFile: (payload) => request('/api/files/upload', { method: 'POST', body: payload }),
+  deleteFile: (id) => request('/api/files/' + idPath(id), { method: 'DELETE' }),
+  fileContent: (id) => request('/api/files/' + idPath(id) + '/content'),
+  analyzeCode: (code) => request('/api/files/analyze', { method: 'POST', body: { code } }),
+  listAgents: () => request('/api/tasks/agents'),
+  plan: (goal) => request('/api/tasks/plan', { method: 'POST', body: { goal } }),
+  createTask: (payload) => request('/api/tasks', { method: 'POST', body: payload }),
+  listTasks: () => request('/api/tasks'),
+  getTask: (id) => request('/api/tasks/' + idPath(id)),
+  runTask: (id) => request('/api/tasks/' + idPath(id) + '/run', { method: 'POST', body: {} }),
+  cancelTask: (id) => request('/api/tasks/' + idPath(id) + '/cancel', { method: 'POST', body: {} }),
+  research: (query) => request('/api/research', { method: 'POST', body: { query } }),
+  runDiagnostics: (opts) => request('/api/diagnostics/run', { method: 'POST', body: opts || {} }),
+  lastDiagnostics: () => request('/api/diagnostics/last'),
+  exportDiagnostics: (format) => '/api/diagnostics/export?format=' + encodeURIComponent(format),
+};
+window.api = api;
+window.jarvesNetworkHint = networkHint;
+
+</script>
+<script>
+const state = {
+  currentConversationId: null,
+  conversations: [],
+  messages: [],
+  models: [],
+  selectedModel: null,
+  selectedProvider: null,
+  theme: (() => { try { return localStorage.getItem('theme') || 'dark'; } catch { return 'dark'; } })(),
+  view: 'chat',
+  generating: false,
+  currentRequestId: null,
+  agents: [],
+  draft: '',
+};
+function loadDraft() {
+  try { return localStorage.getItem('jerver_draft') || ''; } catch { return ''; }
+}
+function saveDraft(v) {
+  try { localStorage.setItem('jerver_draft', v); } catch {}
+}
+function saveTheme(v) { try { localStorage.setItem('theme', v); } catch {} }
+window.saveTheme = saveTheme;
+window.state = state;
+window.loadDraft = loadDraft;
+window.saveDraft = saveDraft;
+
+</script>
+<script>
+function escapeHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function renderMarkdown(text) {
+  // Blocos de codigo sao guardados antes: antes "**kwargs" ou `x` DENTRO do codigo virava negrito/inline.
+  const blocks = [];
+  let s = escapeHtml(text);
+  s = s.replace(/```[\w+-]*\n?([\s\S]*?)```/g, (_, code) => { blocks.push(`<pre class="code-block"><code>${code.replace(/\n$/, '')}</code></pre>`); return `\u0000B${blocks.length - 1}\u0000`; });
+  const inline = [];
+  s = s.replace(/`([^`\n]+)`/g, (_, code) => { inline.push(`<code class="inline-code">${code}</code>`); return `\u0000I${inline.length - 1}\u0000`; });
+  s = s.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/\u0000I(\d+)\u0000/g, (_, i) => inline[i]).replace(/\u0000B(\d+)\u0000/g, (_, i) => blocks[i]);
+  return s;
+}
+function toast(msg, type = 'info') {
+  const el = document.createElement('div');
+  el.className = 'toast toast-' + type;
+  el.textContent = msg;
+  el.style.cssText = 'position:fixed;bottom:20px;right:20px;background:var(--panel);border:1px solid var(--border);padding:10px 14px;border-radius:8px;z-index:100;box-shadow:var(--shadow);';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
+window.escapeHtml = escapeHtml;
+window.renderMarkdown = renderMarkdown;
+window.toast = toast;
+
+</script>
+<script>
+(function () {
+  const canvas = document.getElementById('particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const particles = [];
+  const N = reduce ? 0 : 70;
+  for (let i = 0; i < N; i++) {
+    particles.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 1.8 + 0.6,
+      hue: Math.random() > 0.5 ? 230 : 280,
+    });
+  }
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    // connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i], b = particles[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 130) {
+          ctx.strokeStyle = `rgba(120,140,255,${(1 - dist / 130) * 0.25})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+    for (const p of particles) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.fillStyle = `hsla(${p.hue}, 80%, 70%, 0.9)`;
+      ctx.shadowColor = `hsla(${p.hue}, 80%, 70%, 1)`;
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Theme
+  document.documentElement.setAttribute('data-theme', state.theme);
+  // Sidebar toggle
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('show'); }
+  function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('show'); }
+  document.getElementById('btnMenu').addEventListener('click', openSidebar);
+  document.getElementById('btnCloseSidebar').addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+
+  // View switching
+  function setView(v) {
+    state.view = v;
+    document.querySelectorAll('.view').forEach(el => { el.hidden = (el.id !== 'view-' + v); });
+    if (v === 'agents') loadAgents();
+    if (v === 'files') loadFiles();
+    if (v === 'memory') loadMemory();
+    if (v === 'tasks') loadTasks();
+    if (v === 'settings') loadSettings();
+    if (v === 'diagnostics') loadDiagnostics();
+    if (v === 'reports') loadReports();
+  }
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => { setView(btn.dataset.view); closeSidebar(); });
+  });
+  // default chat view
+  setView('chat');
+
+  // Conversations
+  async function loadConversations(search = '') {
+    try {
+      const list = await api.listConversations(search);
+      state.conversations = list;
+      renderConversations();
+    } catch (e) { toast(e.message, 'error'); }
+  }
+  function renderConversations() {
+    const el = document.getElementById('convList');
+    el.innerHTML = '';
+    for (const c of state.conversations) {
+      const item = document.createElement('div');
+      item.className = 'conv-item' + (c.id === state.currentConversationId ? ' active' : '');
+      const title = document.createElement('div');
+      title.className = 'conv-title';
+      title.textContent = c.title || 'Sem titulo';
+      const ren = document.createElement('button');
+      ren.className = 'conv-del';
+      ren.textContent = '✎';
+      ren.title = 'Renomear';
+      ren.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const nt = prompt('Novo titulo:', c.title || '');
+        if (!nt) return;
+        await api.updateConversation(c.id, { title: nt });
+        if (state.currentConversationId === c.id) document.getElementById('convTitle').textContent = nt;
+        loadConversations();
+      });
+      const del = document.createElement('button');
+      del.className = 'conv-del';
+      del.textContent = '🗑';
+      del.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        if (!confirm('Excluir conversa?')) return;
+        await api.deleteConversation(c.id);
+        if (state.currentConversationId === c.id) { state.currentConversationId = null; state.messages = []; renderChat(); }
+        loadConversations();
+      });
+      item.addEventListener('click', () => selectConversation(c.id));
+      item.appendChild(title);
+      item.appendChild(ren);
+      item.appendChild(del);
+      el.appendChild(item);
+    }
+  }
+  async function selectConversation(id) {
+    try {
+      const data = await api.getConversation(id);
+      state.currentConversationId = id;
+      state.messages = data.messages || [];
+      document.getElementById('convTitle').textContent = data.title || 'Conversa';
+      renderChat();
+      loadConversations();
+      closeSidebar();
+    } catch (e) { toast(e.message, 'error'); }
+  }
+  function renderChat() {
+    const area = document.getElementById('chatArea');
+    area.replaceChildren();
+    const sugBar = document.getElementById('suggestions'); if (sugBar) sugBar.hidden = state.messages.length > 0;
+    if (!state.messages.length) {
+      const welcome = document.createElement('div');
+      welcome.className = 'welcome';
+      welcome.innerHTML = '<div class="welcome-orb">J</div><p class="eyebrow">JARVES AI · V1000</p><h1>Como posso ajudar<br><span>você hoje?</span></h1><p class="welcome-copy">Pergunte, crie, programe ou organize suas ideias. Sua próxima descoberta começa aqui.</p><div class="welcome-chips"><button type="button" data-prompt="Explique como você pode me ajudar.">✦ Conhecer o JARVES</button><button type="button" data-prompt="Ajude-me a criar um projeto de software.">⌘ Criar um projeto</button><button type="button" data-prompt="Analise este código e sugira melhorias.">⌁ Analisar código</button></div>';
+      welcome.querySelectorAll('[data-prompt]').forEach(button => button.addEventListener('click', () => {
+        const input = document.getElementById('input');
+        input.value = button.dataset.prompt;
+        input.focus();
+      }));
+      area.appendChild(welcome);
+      return;
+    }
+    for (const m of state.messages) appendMessageBubble(m.role, m.content, m);
+    area.scrollTop = area.scrollHeight;
+  }
+  function appendMessageBubble(role, content, meta = {}) {
+    const area = document.getElementById('chatArea');
+    const div = document.createElement('div');
+    div.className = 'msg ' + (role === 'user' ? 'user' : (meta.error ? 'error' : 'assistant'));
+    const body = document.createElement('div');
+    body.className = 'msg-body';
+    body.innerHTML = renderMarkdown(content || '');
+    div.appendChild(body);
+    if (meta.model || meta.provider) {
+      const m = document.createElement('div');
+      m.className = 'msg-meta';
+      m.textContent = [meta.provider, meta.model].filter(Boolean).join(' • ');
+      div.appendChild(m);
+    }
+    if (role === 'assistant') {
+      const actions = document.createElement('div');
+      actions.className = 'msg-actions';
+      const copy = document.createElement('button');
+      copy.textContent = 'Copiar';
+      copy.addEventListener('click', () => { navigator.clipboard.writeText(content || ''); toast('Copiado'); });
+      const retry = document.createElement('button');
+      retry.textContent = 'Repetir';
+      retry.addEventListener('click', () => { if (state.generating) return; const lastUser = [...state.messages].reverse().find(x => x.role === 'user'); if (lastUser) { document.getElementById('input').value = lastUser.content; sendMessage(); } });
+      const speak = document.createElement('button');
+      speak.textContent = 'Ler';
+      speak.addEventListener('click', () => { if (window.speakText) window.speakText(content || ''); });
+      actions.appendChild(copy);
+      actions.appendChild(speak);
+      actions.appendChild(retry);
+      div.appendChild(actions);
+    }
+    area.appendChild(div);
+    area.scrollTop = area.scrollHeight;
+    return div;
+  }
+  function createStreamingBubble() {
+    const area = document.getElementById('chatArea');
+    const div = document.createElement('div');
+    div.className = 'msg assistant';
+    const body = document.createElement('div');
+    body.className = 'msg-body';
+    div.appendChild(body);
+    area.appendChild(div);
+    area.scrollTop = area.scrollHeight;
+    return { div, body };
+  }
+
+  // Send message
+  async function sendMessage() {
+    const input = document.getElementById('input');
+    const text = input.value.trim();
+    if (!text) return;
+    if (state.generating) return;
+    input.value = '';
+    saveDraft('');
+    // ensure conversation
+    if (!state.currentConversationId) {
+      try {
+        const c = await api.createConversation({ title: text.slice(0, 60) });
+        state.currentConversationId = c.id;
+        document.getElementById('convTitle').textContent = c.title;
+      } catch (e) { toast(e.message, 'error'); return; }
+    }
+    document.querySelectorAll('#chatArea .welcome').forEach(el => el.remove()); // painel inicial nao pode ficar acima das mensagens
+    const sug = document.getElementById('suggestions'); if (sug) sug.hidden = true;
+    state.messages.push({ role: 'user', content: text });
+    appendMessageBubble('user', text);
+    state.generating = true;
+    updateGeneratingUI(true);
+    const requestId = 'req-' + Date.now();
+    state.currentRequestId = requestId;
+    const bubble = createStreamingBubble();
+    let full = '';
+    let finalModel = state.selectedModel;
+    let finalProvider = state.selectedProvider;
+    let stopped = false;
+    try {
+      let res;
+      try {
+        res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          conversationId: state.currentConversationId,
+          message: text,
+          provider: state.selectedProvider,
+          model: state.selectedModel,
+          stream: true,
+          requestId,
+        }),
+        });
+      } catch (networkError) {
+        throw new Error(window.jarvesNetworkHint ? window.jarvesNetworkHint(networkError) : 'Sem conexão com o servidor. Inicie o JARVES pelo script de inicialização.');
+      }
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+      if (!res.body || !res.body.getReader) {
+        const payload = await res.json().catch(() => ({}));
+        full = payload.content || payload.message || '';
+        bubble.body.textContent = full || 'O servidor respondeu sem conteúdo.';
+      } else {
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+        for (const line of lines) {
+          if (!line.startsWith('data:')) continue;
+          let json;
+          try { json = JSON.parse(line.slice(5).trim()); } catch { continue; }
+          if (json.type === 'delta') {
+            full += json.delta;
+            bubble.body.innerHTML = renderMarkdown(full);
+            const area = document.getElementById('chatArea'); area.scrollTop = area.scrollHeight;
+          } else if (json.type === 'done') {
+            finalModel = json.model || finalModel;
+            finalProvider = json.provider || finalProvider;
+          } else if (json.type === 'saved') {
+            state.currentConversationId = json.conversationId || state.currentConversationId;
+          } else if (json.type === 'error') {
+            if (json.aborted) { stopped = true; continue; }
+            throw new Error(json.error);
+          }
+        }
+      }
+      }
+      if (stopped) bubble.body.innerHTML = renderMarkdown(full) + '\n\n[geracao interrompida]';
+      state.messages.push({ role: 'assistant', content: full, model: finalModel, provider: finalProvider });
+      // meta
+      const meta = document.createElement('div');
+      meta.className = 'msg-meta';
+      meta.textContent = [finalProvider, finalModel].filter(Boolean).join(' • ');
+      bubble.div.appendChild(meta);
+      loadConversations();
+    } catch (e) {
+      bubble.div.classList.add('error');
+      bubble.body.textContent = 'Erro: ' + e.message;
+      state.messages.push({ role: 'assistant', content: '', error: e.message });
+    } finally {
+      state.generating = false;
+      state.currentRequestId = null;
+      updateGeneratingUI(false);
+      loadConversations(); // tambem apos erro: a conversa ja foi criada e gravada
+    }
+  }
+  function updateGeneratingUI(gen) {
+    document.getElementById('btnSend').disabled = gen;
+    document.getElementById('btnStop').disabled = !gen;
+    const sb = document.getElementById('statusBar');
+    if (gen) sb.innerHTML = '<span class="thinking"><span class="core"></span> JARVES AI pensando...</span>';
+    else sb.textContent = '';
+  }
+  document.getElementById('btnSend').addEventListener('click', sendMessage);
+  document.getElementById('input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+  // draft save
+  const inputEl = document.getElementById('input');
+  inputEl.value = loadDraft();
+  inputEl.addEventListener('input', () => saveDraft(inputEl.value));
+
+  document.getElementById('btnStop').addEventListener('click', async () => {
+    if (state.currentRequestId) {
+      try { await api.cancel(state.currentRequestId); } catch {}
+    }
+  });
+  // Voice input (speech-to-text) if supported
+  const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const btnVoice = document.getElementById('btnVoice');
+  if (SpeechRec) {
+    const rec = new SpeechRec();
+    rec.lang = 'pt-BR';
+    rec.continuous = false;
+    rec.interimResults = false;
+    let listening = false;
+    btnVoice.addEventListener('click', () => {
+      if (listening) { rec.stop(); return; }
+      listening = true; btnVoice.textContent = 'Ouvindo...';
+      try { rec.start(); } catch { listening = false; btnVoice.textContent = 'Voz'; }
+    });
+    rec.onresult = (e) => {
+      const t = e.results[0][0].transcript;
+      const input = document.getElementById('input');
+      input.value = (input.value ? input.value + ' ' : '') + t;
+      saveDraft(input.value);
+    };
+    rec.onend = () => { listening = false; btnVoice.textContent = 'Voz'; };
+    rec.onerror = () => { listening = false; btnVoice.textContent = 'Voz'; };
+  } else {
+    btnVoice.disabled = true; btnVoice.title = 'Nao suportado neste navegador';
+  }
+  // Text-to-speech helper for messages
+  window.speakText = (text) => {
+    if (!window.speechSynthesis) return;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'pt-BR';
+    window.speechSynthesis.speak(u);
+  };
+
+  document.getElementById('btnNewChat').addEventListener('click', () => {
+    state.currentConversationId = null;
+    state.messages = [];
+    document.getElementById('convTitle').textContent = 'Nova conversa';
+    document.getElementById('chatArea').innerHTML = '';
+    closeSidebar();
+  });
+  document.getElementById('btnClear').addEventListener('click', () => {
+    document.getElementById('chatArea').innerHTML = '';
+  });
+  document.getElementById('btnExport').addEventListener('click', () => {
+    const data = JSON.stringify(state.messages, null, 2);
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'conversa.json'; a.click();
+    URL.revokeObjectURL(url);
+  });
+  document.getElementById('searchHistory').addEventListener('input', (e) => {
+    loadConversations(e.target.value);
+  });
+
+  // Theme
+  document.getElementById('btnTheme').addEventListener('click', () => {
+    state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', state.theme);
+    saveTheme(state.theme);
+  });
+
+  // Models
+  async function loadModels() {
+    try {
+      const r = await api.listModels();
+      // Sempre segue o provedor ativo no servidor. Antes ficava preso no primeiro valor e, depois de
+      // trocar o provedor em Configuracoes, o chat continuava usando provedor/modelo antigos.
+      state.selectedProvider = r.provider;
+      state.models = r.models || [];
+      const sel = document.getElementById('modelSelect');
+      sel.innerHTML = '';
+      for (const m of state.models) {
+        const opt = document.createElement('option');
+        opt.value = m.id;
+        opt.textContent = m.id;
+        sel.appendChild(opt);
+      }
+      const ids = state.models.map(m => m.id);
+      // Prioridade: escolha atual (se ainda existe no provedor) > modelo configurado > primeiro da lista.
+      if (state.selectedModel && ids.includes(state.selectedModel)) { /* mantem */ }
+      else if (r.selected && ids.includes(r.selected)) state.selectedModel = r.selected;
+      else state.selectedModel = ids[0] || r.selected || null;
+      if (state.selectedModel) sel.value = state.selectedModel;
+      if (!state.models.length) { const o = document.createElement('option'); o.value = ''; o.textContent = r.error ? 'sem modelos (veja o aviso)' : 'nenhum modelo instalado'; sel.appendChild(o); }
+    } catch (e) { toast('Nao foi possivel listar modelos: ' + e.message, 'error'); }
+  }
+  document.getElementById('modelSelect').addEventListener('change', (e) => {
+    state.selectedModel = e.target.value;
+  });
+  loadModels();
+
+  // Suggestions
+  const suggestions = ['Explique um conceito', 'Revise meu codigo', 'Crie um plano de estudo', 'Analise um arquivo'];
+  const sugEl = document.getElementById('suggestions');
+  for (const s of suggestions) {
+    const b = document.createElement('button');
+    b.className = 'suggestion';
+    b.textContent = s;
+    b.addEventListener('click', () => { document.getElementById('input').value = s; });
+    sugEl.appendChild(b);
+  }
+
+  // Agents
+  async function loadAgents() {
+    try {
+      state.agents = await api.listAgents();
+      const grid = document.getElementById('agentsGrid');
+      grid.innerHTML = '';
+      for (const a of state.agents) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${escapeHtml(a.name)}</h3><p>${escapeHtml(a.description)}</p><small>${escapeHtml(a.id)}</small>`;
+        grid.appendChild(card);
+      }
+      const sel = document.getElementById('agentSelect');
+      sel.innerHTML = '';
+      for (const a of state.agents) {
+        const opt = document.createElement('option');
+        opt.value = a.id; opt.textContent = a.name;
+        sel.appendChild(opt);
+      }
+    } catch (e) { toast(e.message, 'error'); }
+  }
+  document.getElementById('btnRunAgent').addEventListener('click', async () => {
+    const id = document.getElementById('agentSelect').value;
+    const task = document.getElementById('agentTask').value.trim();
+    if (!task) return toast('Tarefa vazia', 'error');
+    try {
+      const t = await api.createTask({ goal: task, agentId: id, autoRun: true });
+      document.getElementById('agentResult').textContent = 'Tarefa criada: ' + t.id + '\nAcompanhe na aba Tarefas.';
+    } catch (e) { toast(e.message, 'error'); }
+  });
+
+  // Tasks
+  async function loadTasks() {
+    try {
+      const list = await api.listTasks();
+      const el = document.getElementById('taskList');
+      el.innerHTML = '';
+      for (const t of list) {
+        const item = document.createElement('div');
+        item.className = 'list-item';
+        item.innerHTML = `<div><div class="title">${escapeHtml(t.goal)}</div><div class="meta">${escapeHtml(t.status)} • ${escapeHtml(t.id.slice(0,8))}</div></div>`;
+        const btns = document.createElement('div');
+        const run = document.createElement('button'); run.className='secondary-btn'; run.textContent='Executar'; run.addEventListener('click', async () => { const r = await api.runTask(t.id); document.getElementById('planPreview').textContent = JSON.stringify(r, null, 2); loadTasks(); });
+        const cancel = document.createElement('button'); cancel.className='secondary-btn'; cancel.textContent='Cancelar'; cancel.addEventListener('click', async () => { await api.cancelTask(t.id); loadTasks(); });
+        const view = document.createElement('button'); view.className='secondary-btn'; view.textContent='Ver'; view.addEventListener('click', async () => { const r = await api.getTask(t.id); document.getElementById('planPreview').textContent = JSON.stringify(r, null, 2); });
+        btns.appendChild(view); btns.appendChild(run); btns.appendChild(cancel);
+        item.appendChild(btns);
+        el.appendChild(item);
+      }
+    } catch (e) { toast(e.message, 'error'); }
+  }
+  document.getElementById('btnPlan').addEventListener('click', async () => {
+    const goal = document.getElementById('taskGoal').value.trim();
+    if (!goal) return;
+    try {
+      const r = await api.plan(goal);
+      document.getElementById('planPreview').textContent = JSON.stringify(r, null, 2);
+    } catch (e) { toast(e.message, 'error'); }
+  });
+  document.getElementById('btnRunTask').addEventListener('click', async () => {
+    const goal = document.getElementById('taskGoal').value.trim();
+    if (!goal) return;
+    try {
+      const t = await api.createTask({ goal, autoRun: true });
+      document.getElementById('planPreview').textContent = 'Criada: ' + t.id;
+      loadTasks();
+    } catch (e) { toast(e.message, 'error'); }
+  });
+
+  // Files
+  async function loadFiles() {
+    try {
+      const r = await api.listFiles();
+      const el = document.getElementById('fileList');
+      el.innerHTML = '';
+      for (const f of (r.files || [])) {
+        const item = document.createElement('div');
+        item.className = 'list-item';
+        item.innerHTML = `<div><div class="title">${escapeHtml(f.name)}</div><div class="meta">${f.size} bytes • ${escapeHtml(f.kind || '')}</div></div>`;
+        const del = document.createElement('button'); del.className='secondary-btn'; del.textContent='Excluir';
+        del.addEventListener('click', async () => { if (confirm('Excluir arquivo?')) { await api.deleteFile(f.id); loadFiles(); } });
+        const view = document.createElement('button'); view.className='secondary-btn'; view.textContent='Ler';
+        view.addEventListener('click', async () => {
+          try { const c = await api.fileContent(f.id); document.getElementById('codeAnalysis').textContent = c.content.slice(0, 5000); } catch (e) { toast(e.message, 'error'); }
+        });
+        const viewSite = document.createElement('button'); viewSite.className='secondary-btn'; viewSite.textContent='Ver como site';
+        viewSite.addEventListener('click', () => { window.open('/preview/' + f.id, '_blank'); });
+        const dl = document.createElement('button'); dl.className='secondary-btn'; dl.textContent='Exportar';
+        dl.addEventListener('click', async () => {
+          try {
+            const c = await api.fileContent(f.id);
+            const blob = new Blob([c.content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = f.name; a.click();
+            URL.revokeObjectURL(url);
+          } catch (e) { toast(e.message, 'error'); }
+        });
+        const btns = document.createElement('div'); btns.appendChild(view); btns.appendChild(viewSite); btns.appendChild(dl); btns.appendChild(del);
+        item.appendChild(btns);
+        el.appendChild(item);
+      }
+    } catch (e) { toast(e.message, 'error'); }
+  }
+  function bytesToBase64(bytes) {
+    let binary = '';
+    const CHUNK = 0x8000; // blocos pequenos: String.fromCharCode(...arrayGrande) excede o limite de argumentos
+    for (let i = 0; i < bytes.length; i += CHUNK) binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+    return btoa(binary);
+  }
+  document.getElementById('btnUpload').addEventListener('click', async () => {
+    const input = document.getElementById('fileInput');
+    const files = input.files;
+    if (!files || !files.length) return toast('Selecione arquivos', 'error');
+    const status = document.getElementById('uploadStatus');
+    status.textContent = 'Enviando...';
+    for (const file of files) {
+      const buf = await file.arrayBuffer();
+      const base64 = bytesToBase64(new Uint8Array(buf));
+      try {
+        await api.uploadFile({ name: file.name, mime: file.type, data: base64 });
+      } catch (e) { toast(file.name + ': ' + e.message, 'error'); }
+    }
+    status.textContent = 'Concluido';
+    loadFiles();
+  });
+  document.getElementById('btnAnalyzeCode').addEventListener('click', async () => {
+    const code = document.getElementById('codeInput').value;
+    try {
+      const r = await api.analyzeCode(code);
+      document.getElementById('codeAnalysis').textContent = JSON.stringify(r, null, 2);
+    } catch (e) { toast(e.message, 'error'); }
+  });
+
+  // Memory
+  async function loadMemory(q = '') {
+    try {
+      let list;
+      if (q) list = await api.searchMemory(q); else list = await api.listMemory();
+      const el = document.getElementById('memList');
+      el.innerHTML = '';
+      for (const m of list) {
+        const item = document.createElement('div');
+        item.className = 'list-item';
+        item.innerHTML = `<div><div class="title">${escapeHtml(m.subject || m.kind)}</div><div class="meta">${escapeHtml(m.content.slice(0,120))}</div></div>`;
+        const del = document.createElement('button'); del.className='secondary-btn'; del.textContent='Excluir';
+        del.addEventListener('click', async () => { if (confirm('Excluir memoria?')) { await api.deleteMemory(m.id); loadMemory(document.getElementById('memSearch').value); } });
+        item.appendChild(del);
+        el.appendChild(item);
+      }
+    } catch (e) { toast(e.message, 'error'); }
+  }
+  document.getElementById('btnSaveMem').addEventListener('click', async () => {
+    const content = document.getElementById('memContent').value.trim();
+    if (!content) return toast('Conteudo vazio', 'error');
+    try {
+      await api.createMemory({
+        kind: document.getElementById('memKind').value,
+        subject: document.getElementById('memSubject').value.trim() || null,
+        content,
+      });
+      document.getElementById('memContent').value = '';
+      document.getElementById('memSubject').value = '';
+      loadMemory();
+    } catch (e) { toast(e.message, 'error'); }
+  });
+  document.getElementById('memSearch').addEventListener('input', (e) => loadMemory(e.target.value));
+
+  // Settings and AI provider manager
+  let savedApiKeyPresent = false;
+  function switchSettingsTab(name) {
+    document.querySelectorAll('[data-settings-tab]').forEach(b => b.classList.toggle('active', b.dataset.settingsTab === name));
+    document.querySelectorAll('[data-settings-panel]').forEach(panel => {
+      const active = panel.dataset.settingsPanel === name;
+      panel.hidden = !active;
+      panel.classList.toggle('active', active);
+    });
+    if (name === 'models') refreshModelManager();
+  }
+  document.querySelectorAll('[data-settings-tab]').forEach(b => b.addEventListener('click', () => switchSettingsTab(b.dataset.settingsTab)));
+
+  async function loadSettings() {
+    try {
+      const r = await api.getSettings();
+      const settings = r.settings || {};
+      savedApiKeyPresent = Boolean(settings.openai_api_key);
+      const form = document.getElementById('settingsForm');
+      form.innerHTML = '';
+      const fields = [
+        { key: 'ai_provider', label: 'Provedor ativo', type: 'select', options: ['auto','ollama','openai-compatible','base','mock'] },
+        { key: 'ollama_base_url', label: 'Endereço do Ollama', type: 'url', placeholder: 'http://127.0.0.1:11434' },
+        { key: 'ollama_model', label: 'Modelo Ollama', type: 'text', placeholder: 'qwen3.5:4b' },
+        { key: 'openai_base_url', label: 'Endpoint compatível', type: 'url', placeholder: 'https://api.exemplo.com/v1' },
+        { key: 'openai_model', label: 'Modelo remoto', type: 'text', placeholder: 'nome-do-modelo' },
+        { key: 'ai_timeout_ms', label: 'Tempo limite (ms)', type: 'number' },
+        { key: 'ai_quality', label: 'Qualidade de resposta', type: 'select', options: ['low','medium','high'] },
+        { key: 'theme', label: 'Tema', type: 'select', options: ['dark','light'] },
+        { key: 'language', label: 'Idioma', type: 'text', placeholder: 'pt-BR' },
+      ];
+      for (const f of fields) {
+        const label = document.createElement('label');
+        label.textContent = f.label;
+        let input;
+        if (f.type === 'select') {
+          input = document.createElement('select');
+          for (const o of f.options) { const opt = document.createElement('option'); opt.value = o; opt.textContent = o; input.appendChild(opt); }
+        } else {
+          input = document.createElement('input'); input.type = f.type;
+          if (f.placeholder) input.placeholder = f.placeholder;
+        }
+        input.dataset.key = f.key;
+        const dflt = (r.defaults || {})[f.key];
+        const fallback = { ai_quality: 'medium', theme: state.theme }[f.key];
+        input.value = settings[f.key] !== undefined ? settings[f.key] : (dflt !== undefined ? dflt : (fallback !== undefined ? fallback : ''));
+        label.appendChild(input); form.appendChild(label);
+      }
+      document.getElementById('apiKeyInput').value = '';
+      document.getElementById('apiKeyStatus').textContent = savedApiKeyPresent ? 'Uma chave está salva. Por segurança, ela não é exibida.' : 'Nenhuma chave cadastrada.';
+      switchSettingsTab('connection');
+    } catch (e) { toast(e.message, 'error'); }
+  }
+
+  document.getElementById('btnSaveSettings').addEventListener('click', async () => {
+    const form = document.getElementById('settingsForm');
+    const inputs = [...form.querySelectorAll('[data-key]')];
+    const status = document.getElementById('settingsStatus');
+    const save = document.getElementById('btnSaveSettings');
+    save.disabled = true; status.textContent = 'Salvando configurações...';
+    let ok = true;
+    for (const inp of inputs) {
+      const value = inp.value.trim();
+      try {
+        // Campo vazio = padrao: remove a configuracao em vez de enviar '' (que o servidor recusava,
+        // fazendo o salvamento falhar na primeira vez).
+        if (value === '') await api.deleteSetting(inp.dataset.key);
+        else await api.setSetting(inp.dataset.key, value);
+      } catch (e) { ok = false; toast(inp.dataset.key + ': ' + e.message, 'error'); }
+    }
+    if (ok) { state.selectedModel = null; state.selectedProvider = null; }
+    status.textContent = ok ? 'Configurações salvas. A conexão pode ser testada agora.' : 'Algumas configurações não foram salvas. Revise os campos destacados.';
+    save.disabled = false;
+    if (ok) loadModels();
+  });
+
+  async function refreshModelManager() {
+    const status = document.getElementById('modelManagerStatus');
+    const list = document.getElementById('modelManagerList');
+    status.textContent = 'Consultando modelos disponíveis...'; list.innerHTML = '';
+    const provider = document.querySelector('#settingsForm [data-key="ai_provider"]')?.value || undefined;
+    try {
+      const r = await api.listModels(provider);
+      const models = Array.isArray(r.models) ? r.models : [];
+      status.textContent = r.error ? `Provedor ${r.provider}: ${r.error}` : `${models.length} modelo(s) encontrado(s) em ${r.provider}.`;
+      if (!models.length) {
+        const empty = document.createElement('p'); empty.className = 'muted-copy';
+        empty.textContent = r.error ? 'Verifique o endereço, a chave e se o serviço está ativo.' : 'Nenhum modelo retornado. Instale/adicione um modelo no provedor.';
+        list.appendChild(empty); return;
+      }
+      for (const model of models) {
+        const item = document.createElement('div'); item.className = 'model-manager-item';
+        const info = document.createElement('div');
+        const name = document.createElement('strong'); name.textContent = model.name || model.id;
+        const meta = document.createElement('small'); meta.textContent = [model.provider || r.provider, model.size ? `${Math.round(model.size / 1e9 * 10) / 10} GB` : ''].filter(Boolean).join(' · ');
+        info.append(name, meta);
+        const use = document.createElement('button'); use.className = 'secondary-btn'; use.type = 'button'; use.textContent = 'Usar modelo';
+        use.addEventListener('click', async () => {
+          const key = r.provider === 'ollama' ? 'ollama_model' : 'openai_model';
+          try { await api.setSetting(key, model.id); state.selectedModel = model.id; loadModels(); const field = document.querySelector(`#settingsForm [data-key="${key}"]`); if (field) field.value = model.id; toast(`Modelo ${model.id} selecionado.`); }
+          catch (e) { toast(e.message, 'error'); }
+        });
+        item.append(info, use); list.appendChild(item);
+      }
+    } catch (e) { status.textContent = 'Falha ao consultar modelos: ' + e.message; }
+  }
+  document.getElementById('btnRefreshModels').addEventListener('click', refreshModelManager);
+  document.getElementById('btnPullModel').addEventListener('click', async () => {
+    const input = document.getElementById('ollamaPullName');
+    const model = input.value.trim();
+    const status = document.getElementById('modelManagerStatus');
+    if (!model) { status.textContent = 'Informe o nome de um modelo Ollama.'; return; }
+    const button = document.getElementById('btnPullModel'); button.disabled = true;
+    status.textContent = `Baixando ${model}. O download pode demorar e consumir espaço em disco...`;
+    try { const result = await api.pullModel(model); status.textContent = `Modelo ${result.model} instalado: ${result.status}.`; input.value = ''; await refreshModelManager(); }
+    catch (e) { status.textContent = 'Falha no download: ' + e.message; }
+    finally { button.disabled = false; }
+  });
+
+  document.getElementById('btnTestProvider').addEventListener('click', async () => {
+    const status = document.getElementById('settingsStatus');
+    status.textContent = 'Testando conexão com o provedor...';
+    const provider = document.querySelector('#settingsForm [data-key="ai_provider"]')?.value;
+    try {
+      const r = await api.listModels(provider);
+      if (r.error) throw new Error(r.error);
+      status.textContent = `Conexão OK: ${r.models.length} modelo(s) disponível(is) em ${r.provider}.`;
+    } catch (e) { status.textContent = 'Falha de conexão: ' + e.message; }
+  });
+
+  document.getElementById('btnSaveApiKey').addEventListener('click', async () => {
+    const input = document.getElementById('apiKeyInput');
+    const status = document.getElementById('apiKeyStatus');
+    const key = input.value.trim();
+    if (!key) { status.textContent = 'Cole uma chave válida antes de salvar.'; return; }
+    try {
+      await api.setSetting('openai_api_key', key);
+      input.value = ''; savedApiKeyPresent = true;
+      status.textContent = 'Chave salva. Ela não será exibida novamente.';
+    } catch (e) { status.textContent = 'Não foi possível salvar: ' + e.message; }
+  });
+  document.getElementById('btnDeleteApiKey').addEventListener('click', async () => {
+    const status = document.getElementById('apiKeyStatus');
+    try {
+      await api.deleteSetting('openai_api_key');
+      savedApiKeyPresent = false; status.textContent = 'Chave removida.';
+    } catch (e) { status.textContent = 'Falha ao remover chave: ' + e.message; }
+  });
+  // Diagnostics
+  async function loadDiagnostics() {
+    try {
+      const r = await api.lastDiagnostics();
+      renderDiagnostics(r);
+    } catch (e) { /* none yet */ }
+  }
+  function renderDiagnostics(r) {
+    if (!r) return;
+    const s = r.summary || {};
+    document.getElementById('diagSummary').textContent = `Total: ${s.totalErrors || 0} | Criticos: ${s.critical || 0} | Altos: ${s.high || 0} | Medios: ${s.medium || 0} | Baixos: ${s.low || 0} | Testes OK: ${s.testsPass || 0} | Falhas: ${s.testsFail || 0}`;
+    const el = document.getElementById('diagErrors');
+    el.innerHTML = '';
+    for (const e of (r.errors || [])) {
+      const item = document.createElement('div');
+      item.className = 'list-item';
+      item.innerHTML = `<div><div class="title">[${e.severity}] ${escapeHtml(e.name)}</div><div class="meta">${escapeHtml(e.file)}${e.line ? ':' + e.line : ''} • ${escapeHtml(e.category)} • ${escapeHtml(e.status)}</div><div class="meta">${escapeHtml(e.description)}</div></div>`;
+      el.appendChild(item);
+    }
+    document.getElementById('diagRaw').textContent = JSON.stringify(r.checks || [], null, 2);
+  }
+  document.getElementById('btnRunDiag').addEventListener('click', async () => {
+    const btn = document.getElementById('btnRunDiag');
+    btn.disabled = true;
+    document.getElementById('diagSummary').textContent = 'Executando diagnostico...';
+    try {
+      const r = await api.runDiagnostics();
+      renderDiagnostics(r);
+    } catch (e) { toast(e.message, 'error'); }
+    finally { btn.disabled = false; }
+  });
+  document.getElementById('btnSpeedTest').addEventListener('click', async () => {
+    const btn = document.getElementById('btnSpeedTest');
+    btn.disabled = true;
+    const status = document.getElementById('diagSummary');
+    status.textContent = 'Testando velocidade...';
+    const times = [];
+    for (let i = 0; i < 5; i++) {
+      const t0 = performance.now();
+      try { await fetch('/api/health', { cache: 'no-store' }); } catch {}
+      times.push(performance.now() - t0);
+    }
+    const avg = (times.reduce((a,b)=>a+b,0)/times.length).toFixed(1);
+    const min = Math.min(...times).toFixed(1);
+    status.textContent = `Latencia media: ${avg} ms (min ${min} ms) - ${times.map(t=>t.toFixed(0)).join(', ')} ms`;
+    btn.disabled = false;
+  });
+  document.getElementById('btnDiag').addEventListener('click', async () => {
+    try {
+      const h = await api.health();
+      const m = await api.listModels().catch(e => ({ error: e.message }));
+      document.getElementById('diag').textContent = JSON.stringify({ health: h, models: m }, null, 2);
+    } catch (e) { toast(e.message, 'error'); }
+  });
+
+  async function loadReports() {
+    try {
+      const r = await api.lastDiagnostics().catch(() => null); // 404 = ainda nao ha diagnostico (nao e erro)
+      const el = document.getElementById('resolvedBugs');
+      if (!r) { el.innerHTML = '<div class="status">Nenhum diagnostico executado ainda. Rode um em Diagnostico.</div>'; document.getElementById('reportRaw').textContent = ''; return; }
+      el.innerHTML = '';
+      for (const b of (r.resolvedBugs || [])) {
+        const item = document.createElement('div');
+        item.className = 'list-item';
+        item.innerHTML = `<div><div class="title">${escapeHtml(b.id)}</div><div class="meta">${escapeHtml(b.file)} • ${escapeHtml(b.testResult)} • ${escapeHtml(b.timestamp)}</div></div>`;
+        el.appendChild(item);
+      }
+      if (!(r.resolvedBugs || []).length) el.innerHTML = '<div class="status">Nenhum bug resolvido registrado.</div>';
+      document.getElementById('reportRaw').textContent = JSON.stringify(r.summary || {}, null, 2);
+    } catch (e) { toast(e.message, 'error'); }
+  }
+  document.getElementById('btnRefreshReports').addEventListener('click', loadReports);
+
+  // PWA service worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
+  }
+
+  // initial
+  loadConversations();
+});
+
+</script>
+<script>
+/* Aba GERADOR (motor Sol 6.1): gera imagens, jogos, sites e apps; visualiza, baixa (.zip) e salva em Arquivos. 100% gratuito e offline. */
+(function () {
+  'use strict';
+  const nav = document.querySelector('.tool-nav');
+  const main = document.querySelector('.main');
+  if (!nav || !main) return;
+
+  // ---- botao no menu e secao ----
+  const btn = document.createElement('button');
+  btn.className = 'nav-btn'; btn.dataset.view = 'gerador';
+  btn.innerHTML = '<span>✦</span> Gerador';
+  nav.insertBefore(btn, nav.firstChild);
+  btn.addEventListener('click', () => { document.querySelectorAll('.view').forEach(el => { el.hidden = (el.id !== 'view-gerador'); }); document.getElementById('overlay')?.click(); });
+
+  const sec = document.createElement('section');
+  sec.className = 'view content-view'; sec.id = 'view-gerador'; sec.hidden = true;
+  sec.innerHTML = '<div class="page-heading"><p class="eyebrow">MOTOR SOL 6.1 · 100% GRÁTIS</p><h1>Gerador</h1><p>Descreva o que quer: imagem, jogo, site ou app. O JARVES planeja, cria os arquivos e deixa baixar.</p></div>' +
+    '<div class="panel"><label>O que criar?<textarea id="genPrompt" placeholder="Ex.: paisagem de mar ao por do sol · jogo da cobrinha · site de pizzaria · calculadora"></textarea></label>' +
+    '<div class="row"><select id="genType" aria-label="Tipo"><option value="auto">Automático</option><option value="imagem">Imagem (SVG/PNG)</option><option value="jogo">Jogo HTML</option><option value="site">Site (HTML+CSS+JS)</option><option value="app-todo">App: tarefas</option><option value="app-calc">App: calculadora</option></select>' +
+    '<select id="genEngine" aria-label="Motor"><option value="base">Motor base (offline)</option><option value="ia">IA do Ollama (se ligado)</option></select>' +
+    '<button class="primary-btn" id="genGo" type="button">✦ Gerar</button></div></div>' +
+    '<div class="panel" id="genOut" hidden><h3>Plano</h3><ol id="genPlan"></ol><h3>Arquivos</h3><div class="list" id="genFiles"></div>' +
+    '<div class="row"><button class="secondary-btn" id="genZip" type="button">⇩ Baixar tudo (.zip)</button><button class="secondary-btn" id="genSave" type="button">▤ Salvar em Arquivos</button><button class="secondary-btn" id="genPng" type="button" hidden>🖼 Baixar PNG</button></div>' +
+    '<div class="status" id="genStatus"></div><h3>Pré-visualização</h3><iframe id="genFrame" title="Pré-visualização" sandbox="allow-scripts" style="width:100%;height:480px;border:1px solid var(--line);border-radius:12px;background:#fff"></iframe></div>';
+  main.appendChild(sec);
+
+  const $ = (id) => document.getElementById(id);
+  let current = null;
+  const status = (t) => { $('genStatus').textContent = t; };
+
+  // ---- download (navegador e app Android) ----
+  function download(name, blob) {
+    if (window.AndroidBridge && window.AndroidBridge.saveFile) {
+      const fr = new FileReader();
+      fr.onload = () => { window.AndroidBridge.saveFile(name, String(fr.result).split(',')[1], blob.type || 'application/octet-stream'); status('Salvo em Downloads: ' + name); };
+      fr.readAsDataURL(blob); return;
+    }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }
+
+  // ---- ZIP (sem compressao) ----
+  const CRC = (() => { const t = []; for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+  const crc32 = (u8) => { let c = 0xFFFFFFFF; for (let i = 0; i < u8.length; i++) c = CRC[(c ^ u8[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+  function makeZip(files) {
+    const enc = new TextEncoder(), parts = [], central = []; let offset = 0;
+    const u16 = (v) => [v & 255, (v >> 8) & 255], u32 = (v) => [v & 255, (v >> 8) & 255, (v >> 16) & 255, (v >>> 24) & 255];
+    for (const f of files) {
+      const name = enc.encode(f.name), data = enc.encode(f.content), crc = crc32(data);
+      const local = new Uint8Array([0x50, 0x4b, 3, 4, ...u16(20), ...u16(0x0800), ...u16(0), ...u16(0), ...u16(0x21), ...u32(crc), ...u32(data.length), ...u32(data.length), ...u16(name.length), ...u16(0)]);
+      parts.push(local, name, data);
+      central.push(new Uint8Array([0x50, 0x4b, 1, 2, ...u16(20), ...u16(20), ...u16(0x0800), ...u16(0), ...u16(0), ...u16(0x21), ...u32(crc), ...u32(data.length), ...u32(data.length), ...u16(name.length), ...u16(0), ...u16(0), ...u16(0), ...u16(0), ...u32(0), ...u32(offset)]), name);
+      offset += local.length + name.length + data.length;
+    }
+    const csize = central.reduce((n, p) => n + p.length, 0);
+    const end = new Uint8Array([0x50, 0x4b, 5, 6, 0, 0, 0, 0, ...u16(files.length), ...u16(files.length), ...u32(csize), ...u32(offset), 0, 0]);
+    return new Blob([...parts, ...central, end], { type: 'application/zip' });
+  }
+
+  // ---- previa: embute css/js do site ----
+  function previewDoc(files) {
+    const main = files.find(f => /\.html?$/.test(f.name)); if (!main) return '';
+    let h = main.content;
+    h = h.replace(/<link[^>]+href="([^"]+\.css)"[^>]*>/g, (m, n) => { const f = files.find(x => x.name === n); return f ? '<style>' + f.content + '</style>' : m; });
+    h = h.replace(/<script[^>]+src="([^"]+\.js)"[^>]*><\/script>/g, (m, n) => { const f = files.find(x => x.name === n); return f ? '<script>' + f.content.replace(/<\/script/gi, '<\\/script') + '<\/script>' : m; });
+    return h;
+  }
+
+  function show(res) {
+    current = res;
+    $('genOut').hidden = false;
+    const ol = $('genPlan'); ol.innerHTML = ''; res.plan.forEach(p => { const li = document.createElement('li'); li.textContent = p; ol.appendChild(li); });
+    const list = $('genFiles'); list.innerHTML = '';
+    res.files.forEach(f => {
+      const row = document.createElement('div'); row.className = 'row';
+      const lbl = document.createElement('span'); lbl.style.flex = '1'; lbl.textContent = f.name + ' · ' + Math.max(1, Math.round(f.content.length / 1024)) + ' KB';
+      const b = document.createElement('button'); b.className = 'secondary-btn'; b.type = 'button'; b.textContent = '⇩ Baixar';
+      b.addEventListener('click', () => download(f.name, new Blob([f.content], { type: f.mime || 'text/plain' })));
+      row.append(lbl, b); list.appendChild(row);
+    });
+    const svg = res.files.find(f => f.name.endsWith('.svg'));
+    $('genPng').hidden = !svg;
+    $('genFrame').srcdoc = svg ? '<body style="margin:0;background:#000"><div style="max-width:100%">' + svg.content.replace('width="1024" height="768"', 'style="width:100%;height:auto"') + '</div></body>' : previewDoc(res.files);
+    status('Pronto. ' + res.files.length + ' arquivo(s).');
+  }
+
+  // ---- IA do Ollama: pede o HTML e extrai o codigo ----
+  async function viaIA(prompt, type) {
+    const sys = 'Você gera projetos web completos. Responda SOMENTE com um bloco ```html contendo UM arquivo HTML autocontido (CSS e JS inline), funcional, responsivo e sem dependências externas. Sem explicações.';
+    const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: (type === 'imagem' ? 'Crie uma imagem em SVG inline dentro de um HTML: ' : 'Crie: ') + prompt, systemPrompt: sys, stream: false, provider: 'auto' }) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || 'falha na IA');
+    const m = String(j.content || '').match(/```(?:html)?\s*([\s\S]*?)```/i);
+    const code = (m ? m[1] : j.content || '').trim();
+    if (!/<html|<!doctype|<svg|<canvas|<body/i.test(code)) throw new Error('A IA não devolveu HTML utilizável (modelo ' + (j.model || '?') + ').');
+    return { type: type || 'auto', plan: ['Enviar o pedido ao modelo ' + (j.model || ''), 'Extrair o HTML gerado', 'Conferir e abrir a pré-visualização'], files: [{ name: 'gerado.html', mime: 'text/html', content: code }] };
+  }
+
+  $('genGo').addEventListener('click', async () => {
+    const prompt = $('genPrompt').value.trim();
+    if (!prompt) { status('Escreva o que quer criar.'); $('genOut').hidden = false; return; }
+    const type = $('genType').value;
+    $('genGo').disabled = true; status('Gerando...'); $('genOut').hidden = false;
+    try {
+      let res;
+      if ($('genEngine').value === 'ia') {
+        try { res = await viaIA(prompt, type); }
+        catch (e) { status('IA indisponível (' + e.message + '). Usando o motor base.'); res = window.JARVES_BASE.generate(prompt, type); }
+      } else res = window.JARVES_BASE.generate(prompt, type);
+      show(res);
+    } catch (e) { status('Erro: ' + e.message); }
+    finally { $('genGo').disabled = false; }
+  });
+  $('genZip').addEventListener('click', () => { if (current) download('jarves-projeto.zip', makeZip(current.files)); });
+  $('genSave').addEventListener('click', async () => {
+    if (!current) return;
+    let n = 0;
+    for (const f of current.files) {
+      const bytes = new TextEncoder().encode(f.content); let bin = ''; for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+      try { const r = await fetch('/api/files/upload', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: f.name, mime: f.mime || 'text/plain', data: btoa(bin) }) }); if (r.ok) n++; } catch { /* segue */ }
+    }
+    status(n + ' arquivo(s) salvo(s) em "Arquivos e código".');
+  });
+  $('genPng').addEventListener('click', () => {
+    const svg = current && current.files.find(f => f.name.endsWith('.svg')); if (!svg) return;
+    const img = new Image();
+    img.onload = () => { const c = document.createElement('canvas'); c.width = 1024; c.height = 768; c.getContext('2d').drawImage(img, 0, 0); c.toBlob(b => download('imagem.png', b), 'image/png'); };
+    img.onerror = () => status('Não foi possível converter para PNG; baixe o .svg.');
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg.content);
+  });
+})();
+
+</script>
+<script>
+document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>{const i=document.getElementById('input');i.value=b.dataset.prompt;i.focus();}));
+</script>
+
+</body></html>
